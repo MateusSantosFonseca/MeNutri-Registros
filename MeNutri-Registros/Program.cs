@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeNutri_Registros.Controllers;
 
 namespace MeNutri_Registros
 {
@@ -16,6 +17,7 @@ namespace MeNutri_Registros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new TelaInicial());
         }
     }
