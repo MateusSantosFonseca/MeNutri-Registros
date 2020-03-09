@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeNutri_Registros.Views;
 using MetroFramework.Forms;
 
 namespace MeNutri_Registros
@@ -31,6 +32,8 @@ namespace MeNutri_Registros
 
         private void pictureBoxAdicionarRegistro_Click(object sender, EventArgs e)
         {
+            TelaAdicaoNovoRegistro telaAdicaoNovoRegistro = new TelaAdicaoNovoRegistro();
+            telaAdicaoNovoRegistro.Show();
             // Adicionar logica
         }
 

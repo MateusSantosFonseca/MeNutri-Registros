@@ -40,7 +40,7 @@
             // 
             this.pictureBoxLogoMenutriPrincipal.BackgroundImage = global::MeNutri_Registros.Properties.Resources.MeNutri_Logo_SemFundo;
             this.pictureBoxLogoMenutriPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(176, 117);
+            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(191, 119);
             this.pictureBoxLogoMenutriPrincipal.Name = "pictureBoxLogoMenutriPrincipal";
             this.pictureBoxLogoMenutriPrincipal.Size = new System.Drawing.Size(370, 236);
             this.pictureBoxLogoMenutriPrincipal.TabIndex = 0;
