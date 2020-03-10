@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp;
@@ -12,6 +13,7 @@ using FireSharp.Response;
 using FireSharp.Serialization.JsonNet;
 using FireSharp.Serialization.ServiceStack;
 using MeNutri_Registros.Models;
+using Newtonsoft.Json;
 using ServiceStack.Text;
 
 namespace MeNutri_Registros.Controllers
@@ -33,44 +35,112 @@ namespace MeNutri_Registros.Controllers
             this.client = new FirebaseClient(config);
         }
 
-        // LEMBRA DE ADICIONAR NOVA PASTA NO FIREBASE COM NOME LOGS, NELES FICARAM TODOS OS CATCH COM ERROS, QUE SERAO ENVIADOS PARA LÁ COM O CONTEUDO DA EXCESSAO
-        public async void postRegistro(RegistroModel registro)
+        // Adicionar nova pasta no firebase com nome logs,
+        // Os conteúdos de excessões serão enviados para eles (todos catchs logarão erros lá)
+
+        public void postRegistro(RegistroModel registro)
         {
             try
             {
-                PushResponse response = await client.PushAsync(PATH_FIREBASE, registro);
-                // RegistroModel result = response.ResultAs<RegistroModel>(); // Contem o dado que foi escrito
-
-                MessageBox.Show("O registro foi inserido com sucesso.", "Adição concluída", MessageBoxButtons.OK);
+                SetResponse response = client.Set(PATH_FIREBASE + registro.guid, registro);
+                MessageBox.Show("O registro foi inserido com sucesso.", "Inserção concluída", MessageBoxButtons.OK);
             }
             catch (Exception e)
             {
-                MessageBox.Show("Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.", "Erro ao incluir registro", MessageBoxButtons.OK);
-                // Logar a excessao no firebase
+                MessageBox.Show("Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
+                                               "Erro ao incluir registro", MessageBoxButtons.OK);
             }
         }
 
-        public async void putRegistro()
+        // Lembrar que o guid do registro alterado deve ser o mesmo do guid do objeto construido pela alteração, ou seja:
+        // Na hora de passar o registro para esse método, devo garantir que o guid do registro sendo passado como paramentro
+        // seja IGUAL ao guid do registro que será alterado no banco de dados
+        public void updateRegistro(RegistroModel registro)
         {
-
-            // alteração
-
+            try
+            {
+                FirebaseResponse response = client.Update(PATH_FIREBASE + registro.guid, registro);
+                MessageBox.Show("O registro foi editado com sucesso.", "Edição concluída", MessageBoxButtons.OK);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Não foi possível editar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
+                                            "Erro ao Editar registro", MessageBoxButtons.OK);
+            }
         }
 
-        public async void deleteRegistro()
+        public void deleteRegistro(Guid guid)
         {
-
-            // lembrar de pergunta se tem certeza que deseja cancelar
-
+            try
+            {
+                FirebaseResponse response = client.Delete(PATH_FIREBASE + guid);
+                MessageBox.Show("O registro foi excluido com sucesso.", "Exclusão concluída", MessageBoxButtons.OK);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Não foi possível excluir o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
+                                            "Erro ao Excluir registro", MessageBoxButtons.OK);
+            }
         }
 
-        public async void getAllRegistros()
+        public RegistroModel getRegistro(Guid guid)
         {
-            FirebaseResponse response = await client.GetAsync(PATH_FIREBASE);
-            string aux = response.Body;
-            // string[] values = aux.Split(new string[] { "}," }, StringSplitOptions.None);
-            // string[] values2 = aux.Split('}');
-            //ver como formatar essa aux pra gerar um array de RegistroModel, pra conseguir iterar e mostrar todos registros
+            try
+            {
+                FirebaseResponse response = client.Get(PATH_FIREBASE + guid);
+                RegistroModel registro = response.ResultAs<RegistroModel>();
+                return registro;
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível recuperar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
+                                               "Erro ao recuperar registro", MessageBoxButtons.OK);
+            }
+            return null;
+        }
+
+        public List<RegistroModel> getAllRegistros()
+        {
+            List<RegistroModel> registros = new List<RegistroModel>();
+
+            try
+            {
+                FirebaseResponse response = client.Get(PATH_FIREBASE);
+                if (!response.Body.Equals("null"))
+                {
+                    string[] stringArrayJson = formatarStringParaArrayStringJson(response.Body);
+
+                    foreach (string json in stringArrayJson)
+                        registros.Add(JsonConvert.DeserializeObject<RegistroModel>(json));
+                }
+                else
+                {
+                    MessageBox.Show("Não existem registros cadastrados no sistema.", "Não existem registros cadastrados", MessageBoxButtons.OK);
+                    registros = null;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Não foi possível recuperar os registros, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
+                                                "Erro ao recuperar registros", MessageBoxButtons.OK);
+                registros = null;
+            }
+
+            return registros;
+        }
+
+        private string[] formatarStringParaArrayStringJson(string stringJsonRaw)
+        {
+            string auxiliarJson = string.Empty;
+            auxiliarJson = stringJsonRaw.Remove(stringJsonRaw.IndexOf('{'), 1); // Remove primeiro {
+            auxiliarJson = auxiliarJson.Remove(auxiliarJson.Length - 2); // Remove os ultimos dois }}
+
+            string[] auxArrayJson = auxiliarJson.Split(new string[] { "}," }, StringSplitOptions.None); // Splita por },
+
+            for (int i = 0; i < auxArrayJson.Length; i++)
+                auxArrayJson[i] = (auxArrayJson[i].Substring(auxArrayJson[i].IndexOf(':') + 1)) + '}'; // Remove tudo antes do primeiro ':' no indice
+                                                                                                       // e acrescenta } para finalizar o modelo json
+            return auxArrayJson;
         }
     }
 }

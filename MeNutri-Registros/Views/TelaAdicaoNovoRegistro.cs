@@ -60,7 +60,6 @@ namespace MeNutri_Registros.Views
                 {
                     limparTextboxes();
                     registroController.postRegistro(novoRegistro);
-                    //Adicionar metro message box
                 }
             }
             else
