@@ -18,6 +18,8 @@ namespace MeNutri_Registros
         {
             InitializeComponent();
             this.Icon = Properties.Resources.Watermelon_icon;
+            this.MaximizeBox = false;
+            this.Resizable = false;
         }
 
         private void pictureBoxAdicionarRegistro_MouseEnter(object sender, EventArgs e)
@@ -34,7 +36,6 @@ namespace MeNutri_Registros
         {
             TelaAdicaoNovoRegistro telaAdicaoNovoRegistro = new TelaAdicaoNovoRegistro();
             telaAdicaoNovoRegistro.Show();
-            // Adicionar logica
         }
 
         private void pictureBoxBuscarRegistros_Click(object sender, EventArgs e)

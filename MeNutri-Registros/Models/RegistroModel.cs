@@ -47,5 +47,10 @@ namespace MeNutri_Registros.Models
             this.complemento = complemento;
             this.outros = outros;
         }
+
+        public RegistroModel()
+        {
+            this.guid = Guid.NewGuid();
+        }
     }
 }

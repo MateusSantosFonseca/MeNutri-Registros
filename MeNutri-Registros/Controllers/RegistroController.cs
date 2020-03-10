@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
@@ -32,10 +33,21 @@ namespace MeNutri_Registros.Controllers
             this.client = new FirebaseClient(config);
         }
 
+        // LEMBRA DE ADICIONAR NOVA PASTA NO FIREBASE COM NOME LOGS, NELES FICARAM TODOS OS CATCH COM ERROS, QUE SERAO ENVIADOS PARA LÁ COM O CONTEUDO DA EXCESSAO
         public async void postRegistro(RegistroModel registro)
         {
-            PushResponse response = await client.PushAsync(PATH_FIREBASE, registro);
-            // RegistroModel result = response.ResultAs<RegistroModel>(); // Contem o dado que foi escrito
+            try
+            {
+                PushResponse response = await client.PushAsync(PATH_FIREBASE, registro);
+                // RegistroModel result = response.ResultAs<RegistroModel>(); // Contem o dado que foi escrito
+
+                MessageBox.Show("O registro foi inserido com sucesso.", "Adição concluída", MessageBoxButtons.OK);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.", "Erro ao incluir registro", MessageBoxButtons.OK);
+                // Logar a excessao no firebase
+            }
         }
 
         public async void putRegistro()
