@@ -35,9 +35,6 @@ namespace MeNutri_Registros.Controllers
             this.client = new FirebaseClient(config);
         }
 
-        // Adicionar nova pasta no firebase com nome logs,
-        // Os conteúdos de excessões serão enviados para eles (todos catchs logarão erros lá)
-
         public void postRegistro(RegistroModel registro)
         {
             try
@@ -47,8 +44,12 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
+                string tituloMensagemErro = "Erro ao incluir registro";
+                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+
                 MessageBox.Show("Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                               "Erro ao incluir registro", MessageBoxButtons.OK);
+                                              tituloMensagemErro, MessageBoxButtons.OK);
             }
         }
 
@@ -64,8 +65,12 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
+                string tituloMensagemErro = "Erro ao editar registro";
+                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+
                 MessageBox.Show("Não foi possível editar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                            "Erro ao Editar registro", MessageBoxButtons.OK);
+                                             tituloMensagemErro, MessageBoxButtons.OK);
             }
         }
 
@@ -78,8 +83,12 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
+                string tituloMensagemErro = "Erro ao Excluir registro";
+                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+
                 MessageBox.Show("Não foi possível excluir o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                            "Erro ao Excluir registro", MessageBoxButtons.OK);
+                                            tituloMensagemErro, MessageBoxButtons.OK);
             }
         }
 
@@ -91,10 +100,14 @@ namespace MeNutri_Registros.Controllers
                 RegistroModel registro = response.ResultAs<RegistroModel>();
                 return registro;
             }
-            catch
+            catch (Exception e)
             {
+                string tituloMensagemErro = "Erro ao recuperar registro";
+                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+
                 MessageBox.Show("Não foi possível recuperar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                               "Erro ao recuperar registro", MessageBoxButtons.OK);
+                                               tituloMensagemErro, MessageBoxButtons.OK);
             }
             return null;
         }
@@ -121,8 +134,12 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
+                string tituloMensagemErro = "Erro ao recuperar todos registros";
+                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+
                 MessageBox.Show("Não foi possível recuperar os registros, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                                "Erro ao recuperar registros", MessageBoxButtons.OK);
+                                                tituloMensagemErro, MessageBoxButtons.OK);
                 registros = null;
             }
 

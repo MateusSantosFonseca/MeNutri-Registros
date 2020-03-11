@@ -11,6 +11,7 @@ using MeNutri_Registros.Controllers;
 using MeNutri_Registros.Models;
 using MetroFramework.Forms;
 using MetroFramework;
+using System.Text.RegularExpressions;
 
 namespace MeNutri_Registros.Views
 {
@@ -54,7 +55,8 @@ namespace MeNutri_Registros.Views
                 bool haCamposIncorretos = verificarCamposIncorretos();
                 if (haCamposIncorretos)
                 {
-                    MessageBox.Show("Existem campos incorretos.", "Adição não efetuada", MessageBoxButtons.OK);
+                    MessageBox.Show("Existem campos com preenchimento errado ou não preenchido.\n\nOs campos: \"Nome\", \"Sobrenome\",\"Telefone\" e \"E-mail\" são obrigatórios e devem ser preenchidos corretamente.\n\nVerifique estes campos e tente novamente!",
+                                                "Adição não efetuada", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -70,8 +72,12 @@ namespace MeNutri_Registros.Views
 
         private bool verificarCamposIncorretos()
         {
-            // conjunto de condicoes que tornam o form invalido (validacoes e input em branco)
-            // se invalido retorna true, se nao, false
+            Regex regexEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
+            if (this.metroTextBoxNome.Text.Length < 2 || this.metroTextBoxSobrenome.Text.Length < 2 ||
+                                UtilityClass.RemoveDiacritics(this.metroTextBoxTelefone.Text).Length < 8 ||
+                                !regexEmail.IsMatch(this.metroTextBoxEmail.Text))
+                return true;
 
             return false;
         }

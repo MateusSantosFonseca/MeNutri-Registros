@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.metroPanelAdicionarRegistros = new MetroFramework.Controls.MetroPanel();
+            this.metroTextBoxComplemento = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBoxBairro = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBoxNumero = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxCidade = new MetroFramework.Controls.MetroTextBox();
             this.metroPanelEstiloEstados = new MetroFramework.Controls.MetroPanel();
             this.metroComboBoxEstados = new MetroFramework.Controls.MetroComboBox();
@@ -58,9 +61,6 @@
             this.metroLabelSobrenome = new MetroFramework.Controls.MetroLabel();
             this.metroLabelNome = new MetroFramework.Controls.MetroLabel();
             this.metroButtonAdicionarRegistro = new MetroFramework.Controls.MetroButton();
-            this.metroTextBoxNumero = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBoxBairro = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBoxComplemento = new MetroFramework.Controls.MetroTextBox();
             this.metroPanelAdicionarRegistros.SuspendLayout();
             this.metroPanelEstiloEstados.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +111,34 @@
             this.metroPanelAdicionarRegistros.VerticalScrollbarBarColor = true;
             this.metroPanelAdicionarRegistros.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelAdicionarRegistros.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBoxComplemento
+            // 
+            this.metroTextBoxComplemento.Location = new System.Drawing.Point(484, 271);
+            this.metroTextBoxComplemento.Name = "metroTextBoxComplemento";
+            this.metroTextBoxComplemento.Size = new System.Drawing.Size(75, 23);
+            this.metroTextBoxComplemento.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxComplemento.TabIndex = 23;
+            this.metroTextBoxComplemento.TabStop = false;
+            this.metroTextBoxComplemento.UseStyleColors = true;
+            // 
+            // metroTextBoxBairro
+            // 
+            this.metroTextBoxBairro.Location = new System.Drawing.Point(632, 271);
+            this.metroTextBoxBairro.Name = "metroTextBoxBairro";
+            this.metroTextBoxBairro.Size = new System.Drawing.Size(109, 23);
+            this.metroTextBoxBairro.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxBairro.TabIndex = 24;
+            this.metroTextBoxBairro.UseStyleColors = true;
+            // 
+            // metroTextBoxNumero
+            // 
+            this.metroTextBoxNumero.Location = new System.Drawing.Point(306, 271);
+            this.metroTextBoxNumero.Name = "metroTextBoxNumero";
+            this.metroTextBoxNumero.Size = new System.Drawing.Size(55, 23);
+            this.metroTextBoxNumero.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxNumero.TabIndex = 22;
+            this.metroTextBoxNumero.UseStyleColors = true;
             // 
             // metroTextBoxCidade
             // 
@@ -183,7 +211,7 @@
             // metroLabelComplemento
             // 
             this.metroLabelComplemento.AutoSize = true;
-            this.metroLabelComplemento.Location = new System.Drawing.Point(563, 275);
+            this.metroLabelComplemento.Location = new System.Drawing.Point(381, 275);
             this.metroLabelComplemento.Name = "metroLabelComplemento";
             this.metroLabelComplemento.Size = new System.Drawing.Size(97, 19);
             this.metroLabelComplemento.TabIndex = 37;
@@ -201,7 +229,7 @@
             // metroLabelBairro
             // 
             this.metroLabelBairro.AutoSize = true;
-            this.metroLabelBairro.Location = new System.Drawing.Point(384, 275);
+            this.metroLabelBairro.Location = new System.Drawing.Point(578, 275);
             this.metroLabelBairro.Name = "metroLabelBairro";
             this.metroLabelBairro.Size = new System.Drawing.Size(48, 19);
             this.metroLabelBairro.TabIndex = 35;
@@ -420,38 +448,11 @@
             this.metroButtonAdicionarRegistro.Text = "Adicionar registro";
             this.metroButtonAdicionarRegistro.Click += new System.EventHandler(this.metroButtonAdicionarRegistro_Click);
             // 
-            // metroTextBoxNumero
-            // 
-            this.metroTextBoxNumero.Location = new System.Drawing.Point(306, 271);
-            this.metroTextBoxNumero.Name = "metroTextBoxNumero";
-            this.metroTextBoxNumero.Size = new System.Drawing.Size(55, 23);
-            this.metroTextBoxNumero.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroTextBoxNumero.TabIndex = 22;
-            this.metroTextBoxNumero.UseStyleColors = true;
-            // 
-            // metroTextBoxBairro
-            // 
-            this.metroTextBoxBairro.Location = new System.Drawing.Point(438, 271);
-            this.metroTextBoxBairro.Name = "metroTextBoxBairro";
-            this.metroTextBoxBairro.Size = new System.Drawing.Size(109, 23);
-            this.metroTextBoxBairro.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroTextBoxBairro.TabIndex = 23;
-            this.metroTextBoxBairro.UseStyleColors = true;
-            // 
-            // metroTextBoxComplemento
-            // 
-            this.metroTextBoxComplemento.Location = new System.Drawing.Point(666, 271);
-            this.metroTextBoxComplemento.Name = "metroTextBoxComplemento";
-            this.metroTextBoxComplemento.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBoxComplemento.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroTextBoxComplemento.TabIndex = 24;
-            this.metroTextBoxComplemento.UseStyleColors = true;
-            // 
             // TelaAdicaoNovoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.ClientSize = new System.Drawing.Size(800, 480);
             this.Controls.Add(this.metroPanelAdicionarRegistros);
             this.Name = "TelaAdicaoNovoRegistro";
             this.Style = MetroFramework.MetroColorStyle.Lime;
