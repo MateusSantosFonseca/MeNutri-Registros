@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeNutri_Registros.Controllers;
+using MeNutri_Registros.Views;
 
 namespace MeNutri_Registros
 {
@@ -28,7 +29,7 @@ namespace MeNutri_Registros
                 return;
             }
 
-            Application.Run(new TelaInicial());
+            Application.Run(new TelaLogin());
         }
     }
 }

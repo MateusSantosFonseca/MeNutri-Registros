@@ -18,9 +18,16 @@ namespace MeNutri_Registros
         public TelaInicial()
         {
             InitializeComponent();
+            this.FormClosing += TelaInicial_FormClosing;
             this.Icon = Properties.Resources.Watermelon_icon;
             this.MaximizeBox = false;
             this.Resizable = false;
+
+            if (Globals.isAdminComum() || Globals.isAdminGeral())
+                this.pictureBoxAdicionarRegistro.Visible = true;
+
+            if (!Globals.isNaoAutenticado())
+                this.pictureBoxBuscarRegistros.Visible = true;
         }
 
         private void pictureBoxAdicionarRegistro_MouseEnter(object sender, EventArgs e)
@@ -42,6 +49,11 @@ namespace MeNutri_Registros
         private void pictureBoxBuscarRegistros_Click(object sender, EventArgs e)
         {
             // Adicionar logica
+        }
+
+        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

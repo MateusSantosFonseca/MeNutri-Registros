@@ -134,7 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\RegistroModel.cs" />
     <Compile Include="Program.cs" />
@@ -157,6 +159,12 @@
     <Compile Include="Views\TelaAdicaoNovoRegistro.Designer.cs">
       <DependentUpon>TelaAdicaoNovoRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TelaAdicaoNovoRegistro.resx">
       <DependentUpon>TelaAdicaoNovoRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MeNutri-Registros_TemporaryKey.pfx" />
     <None Include="packages.config" />

@@ -55,6 +55,7 @@
             this.pictureBoxAdicionarRegistro.Size = new System.Drawing.Size(60, 50);
             this.pictureBoxAdicionarRegistro.TabIndex = 1;
             this.pictureBoxAdicionarRegistro.TabStop = false;
+            this.pictureBoxAdicionarRegistro.Visible = false;
             this.pictureBoxAdicionarRegistro.Click += new System.EventHandler(this.pictureBoxAdicionarRegistro_Click);
             this.pictureBoxAdicionarRegistro.MouseEnter += new System.EventHandler(this.pictureBoxAdicionarRegistro_MouseEnter);
             // 
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
