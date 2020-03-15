@@ -33,8 +33,8 @@
             this.metroLabelSenha = new MetroFramework.Controls.MetroLabel();
             this.metroButtonLogar = new MetroFramework.Controls.MetroButton();
             this.metroTextBoxSenha = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxLogoMenutriTelaLogin = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriTelaLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTextBoxUser
@@ -45,6 +45,7 @@
             this.metroTextBoxUser.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTextBoxUser.TabIndex = 0;
             this.metroTextBoxUser.UseStyleColors = true;
+            this.metroTextBoxUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(checkEnterPressed);
             // 
             // metroLabelUser
             // 
@@ -87,23 +88,24 @@
             this.metroTextBoxSenha.TabIndex = 1;
             this.metroTextBoxSenha.UseStyleColors = true;
             this.metroTextBoxSenha.UseSystemPasswordChar = true;
+            this.metroTextBoxSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(checkEnterPressed);
             // 
-            // pictureBox1
+            // pictureBoxLogoMenutriTelaLogin
             // 
-            this.pictureBox1.BackgroundImage = global::MeNutri_Registros.Properties.Resources.MeNutri_Logo_SemFundo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(332, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 65);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogoMenutriTelaLogin.BackgroundImage = global::MeNutri_Registros.Properties.Resources.MeNutri_Logo_SemFundo;
+            this.pictureBoxLogoMenutriTelaLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLogoMenutriTelaLogin.Location = new System.Drawing.Point(332, 17);
+            this.pictureBoxLogoMenutriTelaLogin.Name = "pictureBoxLogoMenutriTelaLogin";
+            this.pictureBoxLogoMenutriTelaLogin.Size = new System.Drawing.Size(96, 65);
+            this.pictureBoxLogoMenutriTelaLogin.TabIndex = 5;
+            this.pictureBoxLogoMenutriTelaLogin.TabStop = false;
             // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 258);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxLogoMenutriTelaLogin);
             this.Controls.Add(this.metroButtonLogar);
             this.Controls.Add(this.metroLabelSenha);
             this.Controls.Add(this.metroLabelUser);
@@ -112,10 +114,9 @@
             this.Name = "TelaLogin";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriTelaLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -125,6 +126,6 @@
         private MetroFramework.Controls.MetroLabel metroLabelSenha;
         private MetroFramework.Controls.MetroButton metroButtonLogar;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSenha;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogoMenutriTelaLogin;
     }
 }

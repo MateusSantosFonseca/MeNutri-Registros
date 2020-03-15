@@ -119,7 +119,6 @@
             this.metroTextBoxComplemento.Size = new System.Drawing.Size(75, 23);
             this.metroTextBoxComplemento.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTextBoxComplemento.TabIndex = 23;
-            this.metroTextBoxComplemento.TabStop = false;
             this.metroTextBoxComplemento.UseStyleColors = true;
             // 
             // metroTextBoxBairro
@@ -151,7 +150,7 @@
             // 
             // metroPanelEstiloEstados
             // 
-            this.metroPanelEstiloEstados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(254)))), ((int)(((byte)(175)))));
+            this.metroPanelEstiloEstados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(245)))), ((int)(((byte)(221)))));
             this.metroPanelEstiloEstados.Controls.Add(this.metroComboBoxEstados);
             this.metroPanelEstiloEstados.ForeColor = System.Drawing.Color.Black;
             this.metroPanelEstiloEstados.HorizontalScrollbarBarColor = true;
@@ -206,7 +205,6 @@
             this.metroComboBoxEstados.Size = new System.Drawing.Size(140, 25);
             this.metroComboBoxEstados.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroComboBoxEstados.TabIndex = 19;
-            this.metroComboBoxEstados.TabStop = false;
             // 
             // metroLabelComplemento
             // 
@@ -279,6 +277,7 @@
             this.metroTextBoxCEP.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTextBoxCEP.TabIndex = 18;
             this.metroTextBoxCEP.UseStyleColors = true;
+            this.metroTextBoxCEP.Leave += new System.EventHandler(this.metroTextBoxCEP_Leave);
             // 
             // metroLabelCEP
             // 

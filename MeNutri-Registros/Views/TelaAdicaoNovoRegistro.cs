@@ -12,6 +12,7 @@ using MeNutri_Registros.Models;
 using MetroFramework.Forms;
 using MetroFramework;
 using System.Text.RegularExpressions;
+using ViaCEP;
 
 namespace MeNutri_Registros.Views
 {
@@ -37,12 +38,12 @@ namespace MeNutri_Registros.Views
                 {
                     nome = !string.IsNullOrWhiteSpace(this.metroTextBoxNome.Text) ? this.metroTextBoxNome.Text : "vazio",
                     sobrenome = !string.IsNullOrWhiteSpace(this.metroTextBoxSobrenome.Text) ? this.metroTextBoxSobrenome.Text : "vazio",
-                    CPF = !string.IsNullOrWhiteSpace(this.metroTextBoxCPF.Text) ? this.metroTextBoxCPF.Text : "vazio",
+                    CPF = !string.IsNullOrWhiteSpace(this.metroTextBoxCPF.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCPF.Text) : "vazio",
                     RG = !string.IsNullOrWhiteSpace(this.metroTextBoxRG.Text) ? this.metroTextBoxRG.Text : "vazio",
-                    telefone = !string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) ? this.metroTextBoxTelefone.Text : "vazio",
+                    telefone = !string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text) : "vazio",
                     email = !string.IsNullOrWhiteSpace(this.metroTextBoxEmail.Text) ? this.metroTextBoxEmail.Text : "vazio",
-                    CNPJ = !string.IsNullOrWhiteSpace(this.metroTextBoxCNPJ.Text) ? this.metroTextBoxCNPJ.Text : "vazio",
-                    CEP = !string.IsNullOrWhiteSpace(this.metroTextBoxCEP.Text) ? this.metroTextBoxCEP.Text : "vazio",
+                    CNPJ = !string.IsNullOrWhiteSpace(this.metroTextBoxCNPJ.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCNPJ.Text) : "vazio",
+                    CEP = !string.IsNullOrWhiteSpace(this.metroTextBoxCEP.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCEP.Text) : "vazio",
                     estado = !string.IsNullOrWhiteSpace(this.metroComboBoxEstados.Text) ? this.metroComboBoxEstados.Text : "vazio",
                     cidade = !string.IsNullOrWhiteSpace(this.metroTextBoxCidade.Text) ? this.metroTextBoxCidade.Text : "vazio",
                     rua = !string.IsNullOrWhiteSpace(this.metroTextBoxRua.Text) ? this.metroTextBoxRua.Text : "vazio",
@@ -62,6 +63,7 @@ namespace MeNutri_Registros.Views
                 {
                     limparTextboxes();
                     registroController.postRegistro(novoRegistro);
+                    this.Close();
                 }
             }
             else
@@ -75,7 +77,7 @@ namespace MeNutri_Registros.Views
             Regex regexEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
             if (this.metroTextBoxNome.Text.Length < 2 || this.metroTextBoxSobrenome.Text.Length < 2 ||
-                                UtilityClass.RemoveDiacritics(this.metroTextBoxTelefone.Text).Length < 8 ||
+                                UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text).Length < 8 ||
                                 !regexEmail.IsMatch(this.metroTextBoxEmail.Text))
                 return true;
 
@@ -97,6 +99,45 @@ namespace MeNutri_Registros.Views
 
             func(this.Controls);
             this.metroComboBoxEstados.SelectedItem = null;
+        }
+
+        private void metroTextBoxCEP_Leave(object sender, EventArgs e)
+        {
+            string cep = UtilityClass.retornaApenasNumeros(this.metroTextBoxCEP.Text);
+
+            if (cep.Length == 8)
+            {
+                try
+                {
+                    ViaCEPResult resultadoPesquisaCEP = ViaCEPClient.Search(cep);
+
+                    if (string.IsNullOrWhiteSpace(resultadoPesquisaCEP.StateInitials))
+                    {
+                        MessageBox.Show("Não foi possível validar o CEP e preencher automaticamente os campos. Você pode enviar este CEP " +
+                                                  "e preencher os campos manualmente, mas é recomendado verificar se o CEP inserido é valido.",
+                                                  "CEP não encontrado na base de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        this.metroTextBoxCEP.Text = cep;
+                        this.metroComboBoxEstados.SelectedItem = UtilityClass.getNomeUFbyIniciais(resultadoPesquisaCEP.StateInitials);
+                        this.metroTextBoxBairro.Text = resultadoPesquisaCEP.Neighborhood;
+                        this.metroTextBoxCidade.Text = resultadoPesquisaCEP.City;
+                        this.metroTextBoxRua.Text = resultadoPesquisaCEP.Street;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    LogModel log = new LogModel("Erro ao se conectar na API da ViaCEP", exception.Message, exception.StackTrace, DateTime.Now);
+                    LogController.logarErro(log);
+                }
+            }
+            else
+            {
+                MessageBox.Show("O CEP inserido é invalido, um cep deve possuir exatamente 8 números", "CEP inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            // faz a consulta
+
         }
     }
 }

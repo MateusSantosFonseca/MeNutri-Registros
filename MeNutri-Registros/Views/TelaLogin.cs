@@ -17,12 +17,27 @@ namespace MeNutri_Registros.Views
         public TelaLogin()
         {
             InitializeComponent();
+            
             this.Icon = Properties.Resources.Watermelon_icon;
             this.MaximizeBox = false;
             this.Resizable = false;
         }
 
+        private void checkEnterPressed(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                realizarLogin();
+                e.Handled = true;
+            }
+        }
+
         private void metroButtonLogar_Click(object sender, EventArgs e)
+        {
+            realizarLogin();
+        }
+
+        private void realizarLogin()
         {
             string loginInserido = this.metroTextBoxUser.Text.ToLower();
             string passwordInserido = this.metroTextBoxSenha.Text;
@@ -41,7 +56,6 @@ namespace MeNutri_Registros.Views
                 this.metroTextBoxUser.Text = "";
                 this.metroTextBoxSenha.Text = "";
             }
-
         }
     }
 }
