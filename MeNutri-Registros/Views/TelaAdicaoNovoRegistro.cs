@@ -36,28 +36,36 @@ namespace MeNutri_Registros.Views
 
                 RegistroModel novoRegistro = new RegistroModel()
                 {
-                    nome = !string.IsNullOrWhiteSpace(this.metroTextBoxNome.Text) ? this.metroTextBoxNome.Text : "vazio",
-                    sobrenome = !string.IsNullOrWhiteSpace(this.metroTextBoxSobrenome.Text) ? this.metroTextBoxSobrenome.Text : "vazio",
+                    RazaoSocial = !string.IsNullOrWhiteSpace(this.metroTextBoxRazaoSocial.Text) ? this.metroTextBoxRazaoSocial.Text : "vazio",
+                    Nome = !string.IsNullOrWhiteSpace(this.metroTextBoxNome.Text) ? this.metroTextBoxNome.Text : "vazio",
+                    Sobrenome = !string.IsNullOrWhiteSpace(this.metroTextBoxSobrenome.Text) ? this.metroTextBoxSobrenome.Text : "vazio",
                     CPF = !string.IsNullOrWhiteSpace(this.metroTextBoxCPF.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCPF.Text) : "vazio",
                     RG = !string.IsNullOrWhiteSpace(this.metroTextBoxRG.Text) ? this.metroTextBoxRG.Text : "vazio",
-                    telefone = !string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text) : "vazio",
-                    email = !string.IsNullOrWhiteSpace(this.metroTextBoxEmail.Text) ? this.metroTextBoxEmail.Text : "vazio",
+                    Telefone = !string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text) : "vazio",
+                    Email = !string.IsNullOrWhiteSpace(this.metroTextBoxEmail.Text) ? this.metroTextBoxEmail.Text : "vazio",
                     CNPJ = !string.IsNullOrWhiteSpace(this.metroTextBoxCNPJ.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCNPJ.Text) : "vazio",
                     CEP = !string.IsNullOrWhiteSpace(this.metroTextBoxCEP.Text) ? UtilityClass.retornaApenasNumeros(this.metroTextBoxCEP.Text) : "vazio",
-                    estado = !string.IsNullOrWhiteSpace(this.metroComboBoxEstados.Text) ? this.metroComboBoxEstados.Text : "vazio",
-                    cidade = !string.IsNullOrWhiteSpace(this.metroTextBoxCidade.Text) ? this.metroTextBoxCidade.Text : "vazio",
-                    rua = !string.IsNullOrWhiteSpace(this.metroTextBoxRua.Text) ? this.metroTextBoxRua.Text : "vazio",
-                    numero = !string.IsNullOrWhiteSpace(this.metroTextBoxNumero.Text) ? this.metroTextBoxNumero.Text : "vazio",
-                    bairro = !string.IsNullOrWhiteSpace(this.metroTextBoxBairro.Text) ? this.metroTextBoxBairro.Text : "vazio",
-                    complemento = !string.IsNullOrWhiteSpace(this.metroTextBoxComplemento.Text) ? this.metroTextBoxComplemento.Text : "vazio",
-                    outros = !string.IsNullOrWhiteSpace(this.metroTextBoxOutros.Text) ? this.metroTextBoxOutros.Text : "vazio"
+                    Estado = !string.IsNullOrWhiteSpace(this.metroComboBoxEstados.Text) ? this.metroComboBoxEstados.Text : "vazio",
+                    Cidade = !string.IsNullOrWhiteSpace(this.metroTextBoxCidade.Text) ? this.metroTextBoxCidade.Text : "vazio",
+                    Rua = !string.IsNullOrWhiteSpace(this.metroTextBoxRua.Text) ? this.metroTextBoxRua.Text : "vazio",
+                    Numero = !string.IsNullOrWhiteSpace(this.metroTextBoxNumero.Text) ? this.metroTextBoxNumero.Text : "vazio",
+                    Bairro = !string.IsNullOrWhiteSpace(this.metroTextBoxBairro.Text) ? this.metroTextBoxBairro.Text : "vazio",
+                    Complemento = !string.IsNullOrWhiteSpace(this.metroTextBoxComplemento.Text) ? this.metroTextBoxComplemento.Text : "vazio",
+                    Outros = !string.IsNullOrWhiteSpace(this.metroTextBoxOutros.Text) ? this.metroTextBoxOutros.Text : "vazio"
                 };
+
+                if (this.metroRadioButtonCliente.Checked)
+                    novoRegistro.TipoRegistro = TipoRegistro.Cliente;
+                else if (this.metroRadioButtonPotencialCliente.Checked)
+                    novoRegistro.TipoRegistro = TipoRegistro.Potencial_cliente;
+                else
+                    novoRegistro.TipoRegistro = TipoRegistro.Funcionario;
 
                 bool haCamposIncorretos = verificarCamposIncorretos();
                 if (haCamposIncorretos)
                 {
-                    MessageBox.Show("Existem campos com preenchimento errado ou não preenchido.\n\nOs campos: \"Nome\", \"Sobrenome\",\"Telefone\" e \"E-mail\" são obrigatórios e devem ser preenchidos corretamente.\n\nVerifique estes campos e tente novamente!",
-                                                "Adição não efetuada", MessageBoxButtons.OK);
+                    MessageBox.Show("Existem campos com preenchimento incorreto ou não preenchido.\n\nOs campos: \"Nome\", \"Sobrenome\" e \"Telefone\" são obrigatórios e devem ser preenchidos corretamente.\n\nVerifique estes campos ou corrija os campos mal preenchidos e tente novamente!",
+                                                "Adição não efetuada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -78,7 +86,7 @@ namespace MeNutri_Registros.Views
 
             if (this.metroTextBoxNome.Text.Length < 2 || this.metroTextBoxSobrenome.Text.Length < 2 ||
                                 UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text).Length < 8 ||
-                                !regexEmail.IsMatch(this.metroTextBoxEmail.Text))
+                                (!regexEmail.IsMatch(this.metroTextBoxEmail.Text) && metroTextBoxEmail.Text.Length > 0))
                 return true;
 
             return false;
@@ -136,7 +144,34 @@ namespace MeNutri_Registros.Views
             {
                 MessageBox.Show("O CEP inserido é invalido, um cep deve possuir exatamente 8 números", "CEP inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            // faz a consulta
+        }
+
+        public void ajustarLayoutControles_FuncionarioCheckedChange(object sender, EventArgs args)
+        {
+            if (metroRadioButtonFuncionario.Checked)
+            {
+                metroLabelNomeEmpresa.Visible = false;
+                metroTextBoxRazaoSocial.Visible = false;
+                metroTextBoxSobrenome.Size = new Size(448, 23);
+
+                // Necessário para o controle não bugar:
+                metroTextBoxSobrenome.Visible = false; 
+                metroTextBoxSobrenome.Visible = true;
+            }
+            else
+            {
+                metroLabelNomeEmpresa.Visible = true;
+                metroTextBoxRazaoSocial.Visible = true;
+                metroLabelNomeEmpresa.Size = new Size(84, 19);
+                metroTextBoxRazaoSocial.Size = new Size(154, 23);
+                metroTextBoxSobrenome.Size = new Size(179, 23);
+
+                // Necessário para o controle não bugar:
+                metroTextBoxSobrenome.Visible = false;
+                metroTextBoxSobrenome.Visible = true;
+            }
+
+
 
         }
     }

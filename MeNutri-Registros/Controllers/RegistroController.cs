@@ -39,7 +39,7 @@ namespace MeNutri_Registros.Controllers
         {
             try
             {
-                SetResponse response = client.Set(PATH_FIREBASE + registro.guid, registro);
+                SetResponse response = client.Set(PATH_FIREBASE + registro.Guid, registro);
                 MessageBox.Show("O registro foi inserido com sucesso.", "Inserção concluída", MessageBoxButtons.OK);
             }
             catch (Exception e)
@@ -60,7 +60,7 @@ namespace MeNutri_Registros.Controllers
         {
             try
             {
-                FirebaseResponse response = client.Update(PATH_FIREBASE + registro.guid, registro);
+                FirebaseResponse response = client.Update(PATH_FIREBASE + registro.Guid, registro);
                 MessageBox.Show("O registro foi editado com sucesso.", "Edição concluída", MessageBoxButtons.OK);
             }
             catch (Exception e)

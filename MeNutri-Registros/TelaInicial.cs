@@ -30,16 +30,6 @@ namespace MeNutri_Registros
                 this.pictureBoxBuscarRegistros.Visible = true;
         }
 
-        private void pictureBoxAdicionarRegistro_MouseEnter(object sender, EventArgs e)
-        {
-            this.pictureBoxAdicionarRegistro.Cursor = Cursors.Hand;
-        }
-
-        private void pictureBoxBuscarRegistros_MouseEnter(object sender, EventArgs e)
-        {
-            this.pictureBoxBuscarRegistros.Cursor = Cursors.Hand;
-        }
-
         private void pictureBoxAdicionarRegistro_Click(object sender, EventArgs e)
         {
             TelaAdicaoNovoRegistro telaAdicaoNovoRegistro = new TelaAdicaoNovoRegistro();
@@ -48,7 +38,18 @@ namespace MeNutri_Registros
 
         private void pictureBoxBuscarRegistros_Click(object sender, EventArgs e)
         {
-            // Adicionar logica
+            TelaVisualizarTodosRegistros telaVisualizarTodosRegistros = new TelaVisualizarTodosRegistros();
+            telaVisualizarTodosRegistros.Show();
+        }
+
+        private void pictureBoxAdicionarRegistro_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBoxAdicionarRegistro.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBoxBuscarRegistros_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBoxBuscarRegistros.Cursor = Cursors.Hand;
         }
 
         private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)

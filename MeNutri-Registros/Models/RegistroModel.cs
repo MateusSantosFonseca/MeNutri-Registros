@@ -7,50 +7,61 @@ using System.Threading.Tasks;
 
 namespace MeNutri_Registros.Models
 {
+    public enum TipoRegistro
+    {
+        Potencial_cliente,
+        Cliente,
+        Funcionario,
+    }
+
     public class RegistroModel
     {
-        public Guid guid { get; set; }
-        public string nome { get; set; }
-        public string sobrenome { get; set; }
+        public Guid Guid { get; set; }
+        public TipoRegistro TipoRegistro { get; set; }
+        public string RazaoSocial { get; set; }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
-        public string telefone { get; set; }
-        public string email { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
         public string CNPJ { get; set; }
         public string CEP { get; set; }
-        public string estado { get; set; }
-        public string cidade { get; set; }
-        public string rua { get; set; }
-        public string numero { get; set; }
-        public string bairro { get; set; }
-        public string complemento { get; set; }
-        public string outros { get; set; }
+        public string Estado { get; set; }
+        public string Cidade { get; set; }
+        public string Rua { get; set; }
+        public string Numero { get; set; }
+        public string Bairro { get; set; }
+        public string Complemento { get; set; }
+        public string Outros { get; set; }
 
-        public RegistroModel(string nome, string sobrenome, string CPF, string RG, string telefone,
-                             string email, string CNPJ, string CEP, string estado, string cidade,
-                             string rua, string numero, string bairro, string complemento, string outros)
+        public RegistroModel(TipoRegistro tipoRegistro, string razaoSocial, string nome, string sobrenome, string CPF, string RG, 
+                            string telefone, string email, string CNPJ, string CEP, string estado, 
+                            string cidade, string rua, string numero, string bairro, string complemento, string outros)
         {
-            this.guid = Guid.NewGuid();
-            this.nome = nome;
-            this.sobrenome = sobrenome;
+            this.Guid = Guid.NewGuid();
+            this.TipoRegistro = tipoRegistro;
+            this.RazaoSocial = razaoSocial;
+            this.Nome = nome;
+            this.Sobrenome = sobrenome;
             this.CPF = CPF;
             this.RG = RG;
-            this.telefone = telefone;
-            this.email = email;
+            this.Telefone = telefone;
+            this.Email = email;
             this.CNPJ = CNPJ;
             this.CEP = CEP;
-            this.estado = estado;
-            this.cidade = cidade;
-            this.rua = rua;
-            this.numero = numero;
-            this.bairro = bairro;
-            this.complemento = complemento;
-            this.outros = outros;
+            this.Estado = estado;
+            this.Cidade = cidade;
+            this.Rua = rua;
+            this.Numero = numero;
+            this.Bairro = bairro;
+            this.Complemento = complemento;
+            this.Outros = outros;
         }
 
         public RegistroModel()
         {
-            this.guid = Guid.NewGuid();
+            this.Guid = Guid.NewGuid();
         }
     }
 }
