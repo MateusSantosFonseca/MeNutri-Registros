@@ -18,7 +18,7 @@ namespace MeNutri_Registros.Views
         {
             InitializeComponent();
             
-            this.Icon = Properties.Resources.Watermelon_icon;
+            this.Icon = Properties.Resources.Menutrinho_Icon;
             this.MaximizeBox = false;
             this.Resizable = false;
         }

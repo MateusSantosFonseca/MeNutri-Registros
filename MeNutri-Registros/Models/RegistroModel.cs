@@ -17,10 +17,11 @@ namespace MeNutri_Registros.Models
     public class RegistroModel
     {
         public Guid Guid { get; set; }
+        public DateTime HorarioCadastroRegistro { get; set; }
         public TipoRegistro TipoRegistro { get; set; }
-        public string RazaoSocial { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
+        public string RazaoSocial { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string Telefone { get; set; }
@@ -35,15 +36,16 @@ namespace MeNutri_Registros.Models
         public string Complemento { get; set; }
         public string Outros { get; set; }
 
-        public RegistroModel(TipoRegistro tipoRegistro, string razaoSocial, string nome, string sobrenome, string CPF, string RG, 
-                            string telefone, string email, string CNPJ, string CEP, string estado, 
+        public RegistroModel(TipoRegistro tipoRegistro, DateTime horaCadastroRegistro, string razaoSocial, string nome, string sobrenome,
+                            string CPF, string RG, string telefone, string email, string CNPJ, string CEP, string estado, 
                             string cidade, string rua, string numero, string bairro, string complemento, string outros)
         {
             this.Guid = Guid.NewGuid();
+            this.HorarioCadastroRegistro = horaCadastroRegistro;
             this.TipoRegistro = tipoRegistro;
-            this.RazaoSocial = razaoSocial;
             this.Nome = nome;
             this.Sobrenome = sobrenome;
+            this.RazaoSocial = razaoSocial;
             this.CPF = CPF;
             this.RG = RG;
             this.Telefone = telefone;

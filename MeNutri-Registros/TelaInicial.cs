@@ -19,7 +19,7 @@ namespace MeNutri_Registros
         {
             InitializeComponent();
             this.FormClosing += TelaInicial_FormClosing;
-            this.Icon = Properties.Resources.Watermelon_icon;
+            this.Icon = Properties.Resources.Menutrinho_Icon;
             this.MaximizeBox = false;
             this.Resizable = false;
 

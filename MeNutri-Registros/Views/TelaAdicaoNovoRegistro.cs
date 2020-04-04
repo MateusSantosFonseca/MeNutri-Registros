@@ -21,7 +21,7 @@ namespace MeNutri_Registros.Views
         public TelaAdicaoNovoRegistro()
         {
             InitializeComponent();
-            this.Icon = Properties.Resources.Watermelon_icon;
+            this.Icon = Properties.Resources.Menutrinho_Icon;
             this.MaximizeBox = false;
             this.Resizable = false;
         }
@@ -51,7 +51,8 @@ namespace MeNutri_Registros.Views
                     Numero = !string.IsNullOrWhiteSpace(this.metroTextBoxNumero.Text) ? this.metroTextBoxNumero.Text : "vazio",
                     Bairro = !string.IsNullOrWhiteSpace(this.metroTextBoxBairro.Text) ? this.metroTextBoxBairro.Text : "vazio",
                     Complemento = !string.IsNullOrWhiteSpace(this.metroTextBoxComplemento.Text) ? this.metroTextBoxComplemento.Text : "vazio",
-                    Outros = !string.IsNullOrWhiteSpace(this.metroTextBoxOutros.Text) ? this.metroTextBoxOutros.Text : "vazio"
+                    Outros = !string.IsNullOrWhiteSpace(this.metroTextBoxOutros.Text) ? this.metroTextBoxOutros.Text : "vazio",
+                    HorarioCadastroRegistro = DateTime.Now
                 };
 
                 if (this.metroRadioButtonCliente.Checked)
