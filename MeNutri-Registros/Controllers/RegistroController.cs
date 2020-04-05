@@ -44,12 +44,10 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
-                string tituloMensagemErro = "Erro ao incluir registro";
-                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                MensagemModel mensagem = new MensagemModel("Erro ao incluir registro", "Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-
-                MessageBox.Show("Não foi possível adicionar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                              tituloMensagemErro, MessageBoxButtons.OK);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
             }
         }
 
@@ -65,12 +63,10 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
-                string tituloMensagemErro = "Erro ao editar registro";
-                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                MensagemModel mensagem = new MensagemModel("Erro ao editar registro", "Não foi possível editar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-
-                MessageBox.Show("Não foi possível editar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                             tituloMensagemErro, MessageBoxButtons.OK);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
             }
         }
 
@@ -83,12 +79,10 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
-                string tituloMensagemErro = "Erro ao Excluir registro";
-                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                MensagemModel mensagem = new MensagemModel("Erro ao Excluir registro", "Não foi possível excluir o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-
-                MessageBox.Show("Não foi possível excluir o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                            tituloMensagemErro, MessageBoxButtons.OK);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
             }
         }
 
@@ -102,12 +96,10 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
-                string tituloMensagemErro = "Erro ao recuperar registro";
-                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                MensagemModel mensagem = new MensagemModel("Erro ao recuperar registro", "Não foi possível recuperar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-
-                MessageBox.Show("Não foi possível recuperar o registro, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                               tituloMensagemErro, MessageBoxButtons.OK);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
             }
             return null;
         }
@@ -134,12 +126,10 @@ namespace MeNutri_Registros.Controllers
             }
             catch (Exception e)
             {
-                string tituloMensagemErro = "Erro ao recuperar todos registros";
-                LogModel log = new LogModel(tituloMensagemErro, e.Message, e.StackTrace, DateTime.Now);
+                MensagemModel mensagem = new MensagemModel("Erro ao recuperar todos registros", "Não foi possível recuperar os registros, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-
-                MessageBox.Show("Não foi possível recuperar os registros, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.",
-                                                tituloMensagemErro, MessageBoxButtons.OK);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
                 registros = null;
             }
 

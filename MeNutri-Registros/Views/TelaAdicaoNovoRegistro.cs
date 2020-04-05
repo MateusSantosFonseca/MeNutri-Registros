@@ -135,10 +135,12 @@ namespace MeNutri_Registros.Views
                         this.metroTextBoxRua.Text = resultadoPesquisaCEP.Street;
                     }
                 }
-                catch (Exception exception)
+                catch (Exception ex)
                 {
-                    LogModel log = new LogModel("Erro ao se conectar na API da ViaCEP", exception.Message, exception.StackTrace, DateTime.Now);
+                    MensagemModel mensagem = new MensagemModel("Erro ao se conectar na API da ViaCEP", "Ocorreram erros na utilização no Excel, tente novamente.");
+                    LogModel log = new LogModel(mensagem.Titulo, ex.Message, ex.StackTrace, DateTime.Now);
                     LogController.logarErro(log);
+                    MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
                 }
             }
             else
