@@ -142,6 +142,7 @@
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="ExportadorXlsPdf.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\RegistroModel.cs" />

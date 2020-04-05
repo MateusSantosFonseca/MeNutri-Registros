@@ -55,6 +55,7 @@ namespace MeNutri_Registros.Views
                 MessageBox.Show("Senha ou usuários incorretos, por favor, tente novamente.", "Login falhou", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.metroTextBoxUser.Text = "";
                 this.metroTextBoxSenha.Text = "";
+                this.metroTextBoxUser.Focus();
             }
         }
     }

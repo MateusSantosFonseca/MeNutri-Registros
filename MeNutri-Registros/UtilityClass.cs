@@ -31,7 +31,6 @@ namespace MeNutri_Registros
         {
             return Regex.Replace(baseString, "[^0-9.]", "").Trim();
         }
-
         public static string getNomeUFbyIniciais(string iniciaisEstado)
         {
             switch (iniciaisEstado)

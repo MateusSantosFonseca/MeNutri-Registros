@@ -33,11 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGridVisualizacaoRegistros = new MetroFramework.Controls.MetroGrid();
             this.metroPanelControlesGrid = new MetroFramework.Controls.MetroPanel();
+            this.metroButtonExcluirRegistro = new MetroFramework.Controls.MetroButton();
             this.metroButtonResetarFiltrosEGrid = new MetroFramework.Controls.MetroButton();
             this.metroButtonPesquisarRegistros = new MetroFramework.Controls.MetroButton();
             this.metroComboBoxOrdenar = new MetroFramework.Controls.MetroComboBox();
             this.metroButtonFiltrarGrid = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabelFiltrarGridExplicativo = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxFiltrar = new MetroFramework.Controls.MetroTextBox();
             this.metroDateTimeTermino = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTimeInicio = new MetroFramework.Controls.MetroDateTime();
@@ -47,7 +48,6 @@
             this.pictureBoxExportarExcel = new System.Windows.Forms.PictureBox();
             this.metroButtonEditarRegistro = new MetroFramework.Controls.MetroButton();
             this.metroButtonVisualizarRegistro = new MetroFramework.Controls.MetroButton();
-            this.metroButtonExcluirRegistro = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridVisualizacaoRegistros)).BeginInit();
             this.metroPanelControlesGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExportarPDF)).BeginInit();
@@ -101,19 +101,23 @@
             this.metroGridVisualizacaoRegistros.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGridVisualizacaoRegistros.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridVisualizacaoRegistros.RowTemplate.Height = 28;
+            this.metroGridVisualizacaoRegistros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.metroGridVisualizacaoRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGridVisualizacaoRegistros.Size = new System.Drawing.Size(856, 372);
             this.metroGridVisualizacaoRegistros.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroGridVisualizacaoRegistros.TabIndex = 0;
+            this.metroGridVisualizacaoRegistros.TabIndex = 30;
+            this.metroGridVisualizacaoRegistros.UseCustomForeColor = true;
+            this.metroGridVisualizacaoRegistros.UseStyleColors = true;
             this.metroGridVisualizacaoRegistros.Visible = false;
             // 
             // metroPanelControlesGrid
             // 
+            this.metroPanelControlesGrid.Controls.Add(this.metroButtonExcluirRegistro);
             this.metroPanelControlesGrid.Controls.Add(this.metroButtonResetarFiltrosEGrid);
             this.metroPanelControlesGrid.Controls.Add(this.metroButtonPesquisarRegistros);
             this.metroPanelControlesGrid.Controls.Add(this.metroComboBoxOrdenar);
             this.metroPanelControlesGrid.Controls.Add(this.metroButtonFiltrarGrid);
-            this.metroPanelControlesGrid.Controls.Add(this.metroLabel1);
+            this.metroPanelControlesGrid.Controls.Add(this.metroLabelFiltrarGridExplicativo);
             this.metroPanelControlesGrid.Controls.Add(this.metroTextBoxFiltrar);
             this.metroPanelControlesGrid.Controls.Add(this.metroDateTimeTermino);
             this.metroPanelControlesGrid.Controls.Add(this.metroDateTimeInicio);
@@ -126,17 +130,30 @@
             this.metroPanelControlesGrid.HorizontalScrollbarBarColor = true;
             this.metroPanelControlesGrid.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanelControlesGrid.HorizontalScrollbarSize = 10;
-            this.metroPanelControlesGrid.Location = new System.Drawing.Point(15, 69);
+            this.metroPanelControlesGrid.Location = new System.Drawing.Point(15, 59);
             this.metroPanelControlesGrid.Name = "metroPanelControlesGrid";
-            this.metroPanelControlesGrid.Size = new System.Drawing.Size(856, 90);
+            this.metroPanelControlesGrid.Size = new System.Drawing.Size(856, 99);
             this.metroPanelControlesGrid.TabIndex = 1;
             this.metroPanelControlesGrid.VerticalScrollbarBarColor = true;
             this.metroPanelControlesGrid.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelControlesGrid.VerticalScrollbarSize = 10;
             // 
+            // metroButtonExcluirRegistro
+            // 
+            this.metroButtonExcluirRegistro.Location = new System.Drawing.Point(635, 3);
+            this.metroButtonExcluirRegistro.Name = "metroButtonExcluirRegistro";
+            this.metroButtonExcluirRegistro.Size = new System.Drawing.Size(87, 27);
+            this.metroButtonExcluirRegistro.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroButtonExcluirRegistro.TabIndex = 10;
+            this.metroButtonExcluirRegistro.Text = "Excluir";
+            this.metroButtonExcluirRegistro.UseCustomBackColor = true;
+            this.metroButtonExcluirRegistro.UseSelectable = true;
+            this.metroButtonExcluirRegistro.UseStyleColors = true;
+            this.metroButtonExcluirRegistro.Visible = false;
+            // 
             // metroButtonResetarFiltrosEGrid
             // 
-            this.metroButtonResetarFiltrosEGrid.Location = new System.Drawing.Point(746, 5);
+            this.metroButtonResetarFiltrosEGrid.Location = new System.Drawing.Point(747, 3);
             this.metroButtonResetarFiltrosEGrid.Name = "metroButtonResetarFiltrosEGrid";
             this.metroButtonResetarFiltrosEGrid.Size = new System.Drawing.Size(96, 27);
             this.metroButtonResetarFiltrosEGrid.Style = MetroFramework.MetroColorStyle.Purple;
@@ -149,7 +166,7 @@
             // 
             // metroButtonPesquisarRegistros
             // 
-            this.metroButtonPesquisarRegistros.Location = new System.Drawing.Point(391, 61);
+            this.metroButtonPesquisarRegistros.Location = new System.Drawing.Point(391, 70);
             this.metroButtonPesquisarRegistros.Name = "metroButtonPesquisarRegistros";
             this.metroButtonPesquisarRegistros.Size = new System.Drawing.Size(114, 26);
             this.metroButtonPesquisarRegistros.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -170,7 +187,7 @@
             "Razão Social",
             "Tipo Registro",
             "Estado"});
-            this.metroComboBoxOrdenar.Location = new System.Drawing.Point(391, 25);
+            this.metroComboBoxOrdenar.Location = new System.Drawing.Point(391, 34);
             this.metroComboBoxOrdenar.Name = "metroComboBoxOrdenar";
             this.metroComboBoxOrdenar.Size = new System.Drawing.Size(114, 29);
             this.metroComboBoxOrdenar.Style = MetroFramework.MetroColorStyle.Purple;
@@ -183,7 +200,7 @@
             // 
             // metroButtonFiltrarGrid
             // 
-            this.metroButtonFiltrarGrid.Location = new System.Drawing.Point(634, 27);
+            this.metroButtonFiltrarGrid.Location = new System.Drawing.Point(635, 36);
             this.metroButtonFiltrarGrid.Name = "metroButtonFiltrarGrid";
             this.metroButtonFiltrarGrid.Size = new System.Drawing.Size(87, 27);
             this.metroButtonFiltrarGrid.Style = MetroFramework.MetroColorStyle.Brown;
@@ -194,14 +211,16 @@
             this.metroButtonFiltrarGrid.UseStyleColors = true;
             this.metroButtonFiltrarGrid.Click += new System.EventHandler(this.metroButtonFiltrarGrid_Click);
             // 
-            // metroLabel1
+            // metroLabelFiltrarGridExplicativo
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(529, 3);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(74, 19);
-            this.metroLabel1.TabIndex = 10;
-            this.metroLabel1.Text = "Filtrar grid:";
+            this.metroLabelFiltrarGridExplicativo.AutoSize = true;
+            this.metroLabelFiltrarGridExplicativo.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabelFiltrarGridExplicativo.Location = new System.Drawing.Point(530, 15);
+            this.metroLabelFiltrarGridExplicativo.Name = "metroLabelFiltrarGridExplicativo";
+            this.metroLabelFiltrarGridExplicativo.Size = new System.Drawing.Size(64, 15);
+            this.metroLabelFiltrarGridExplicativo.Style = MetroFramework.MetroColorStyle.Brown;
+            this.metroLabelFiltrarGridExplicativo.TabIndex = 10;
+            this.metroLabelFiltrarGridExplicativo.Text = "Filtrar grid:";
             // 
             // metroTextBoxFiltrar
             // 
@@ -219,7 +238,7 @@
             this.metroTextBoxFiltrar.CustomButton.Visible = false;
             this.metroTextBoxFiltrar.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.metroTextBoxFiltrar.Lines = new string[0];
-            this.metroTextBoxFiltrar.Location = new System.Drawing.Point(529, 25);
+            this.metroTextBoxFiltrar.Location = new System.Drawing.Point(530, 34);
             this.metroTextBoxFiltrar.MaxLength = 100;
             this.metroTextBoxFiltrar.Name = "metroTextBoxFiltrar";
             this.metroTextBoxFiltrar.PasswordChar = '\0';
@@ -240,7 +259,7 @@
             // 
             this.metroDateTimeTermino.CustomFormat = "";
             this.metroDateTimeTermino.FontSize = MetroFramework.MetroDateTimeSize.Small;
-            this.metroDateTimeTermino.Location = new System.Drawing.Point(199, 60);
+            this.metroDateTimeTermino.Location = new System.Drawing.Point(199, 69);
             this.metroDateTimeTermino.MinDate = new System.DateTime(2020, 4, 1, 0, 0, 0, 0);
             this.metroDateTimeTermino.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTimeTermino.Name = "metroDateTimeTermino";
@@ -254,7 +273,7 @@
             // 
             this.metroDateTimeInicio.CustomFormat = "";
             this.metroDateTimeInicio.FontSize = MetroFramework.MetroDateTimeSize.Small;
-            this.metroDateTimeInicio.Location = new System.Drawing.Point(14, 60);
+            this.metroDateTimeInicio.Location = new System.Drawing.Point(15, 69);
             this.metroDateTimeInicio.MinDate = new System.DateTime(2020, 4, 1, 0, 0, 0, 0);
             this.metroDateTimeInicio.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTimeInicio.Name = "metroDateTimeInicio";
@@ -267,7 +286,7 @@
             // metroLabelTerminoData
             // 
             this.metroLabelTerminoData.AutoSize = true;
-            this.metroLabelTerminoData.Location = new System.Drawing.Point(199, 27);
+            this.metroLabelTerminoData.Location = new System.Drawing.Point(199, 36);
             this.metroLabelTerminoData.Name = "metroLabelTerminoData";
             this.metroLabelTerminoData.Size = new System.Drawing.Size(59, 19);
             this.metroLabelTerminoData.TabIndex = 8;
@@ -276,7 +295,7 @@
             // metroLabelInicioData
             // 
             this.metroLabelInicioData.AutoSize = true;
-            this.metroLabelInicioData.Location = new System.Drawing.Point(14, 27);
+            this.metroLabelInicioData.Location = new System.Drawing.Point(15, 36);
             this.metroLabelInicioData.Name = "metroLabelInicioData";
             this.metroLabelInicioData.Size = new System.Drawing.Size(42, 19);
             this.metroLabelInicioData.TabIndex = 7;
@@ -286,7 +305,7 @@
             // 
             this.pictureBoxExportarPDF.BackgroundImage = global::MeNutri_Registros.Properties.Resources.pdf;
             this.pictureBoxExportarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxExportarPDF.Location = new System.Drawing.Point(797, 42);
+            this.pictureBoxExportarPDF.Location = new System.Drawing.Point(798, 51);
             this.pictureBoxExportarPDF.Name = "pictureBoxExportarPDF";
             this.pictureBoxExportarPDF.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarPDF.TabIndex = 6;
@@ -297,7 +316,7 @@
             // 
             this.pictureBoxExportarExcel.BackgroundImage = global::MeNutri_Registros.Properties.Resources.xls;
             this.pictureBoxExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxExportarExcel.Location = new System.Drawing.Point(746, 42);
+            this.pictureBoxExportarExcel.Location = new System.Drawing.Point(747, 51);
             this.pictureBoxExportarExcel.Name = "pictureBoxExportarExcel";
             this.pictureBoxExportarExcel.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarExcel.TabIndex = 5;
@@ -306,7 +325,7 @@
             // 
             // metroButtonEditarRegistro
             // 
-            this.metroButtonEditarRegistro.Location = new System.Drawing.Point(634, 60);
+            this.metroButtonEditarRegistro.Location = new System.Drawing.Point(635, 69);
             this.metroButtonEditarRegistro.Name = "metroButtonEditarRegistro";
             this.metroButtonEditarRegistro.Size = new System.Drawing.Size(87, 27);
             this.metroButtonEditarRegistro.Style = MetroFramework.MetroColorStyle.Green;
@@ -318,7 +337,7 @@
             // 
             // metroButtonVisualizarRegistro
             // 
-            this.metroButtonVisualizarRegistro.Location = new System.Drawing.Point(529, 60);
+            this.metroButtonVisualizarRegistro.Location = new System.Drawing.Point(530, 69);
             this.metroButtonVisualizarRegistro.Name = "metroButtonVisualizarRegistro";
             this.metroButtonVisualizarRegistro.Size = new System.Drawing.Size(87, 27);
             this.metroButtonVisualizarRegistro.Style = MetroFramework.MetroColorStyle.Teal;
@@ -328,19 +347,6 @@
             this.metroButtonVisualizarRegistro.UseSelectable = true;
             this.metroButtonVisualizarRegistro.UseStyleColors = true;
             // 
-            // metroButtonExcluirRegistro
-            // 
-            this.metroButtonExcluirRegistro.Location = new System.Drawing.Point(761, 36);
-            this.metroButtonExcluirRegistro.Name = "metroButtonExcluirRegistro";
-            this.metroButtonExcluirRegistro.Size = new System.Drawing.Size(96, 27);
-            this.metroButtonExcluirRegistro.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroButtonExcluirRegistro.TabIndex = 10;
-            this.metroButtonExcluirRegistro.Text = "Excluir";
-            this.metroButtonExcluirRegistro.UseCustomBackColor = true;
-            this.metroButtonExcluirRegistro.UseSelectable = true;
-            this.metroButtonExcluirRegistro.UseStyleColors = true;
-            this.metroButtonExcluirRegistro.Visible = false;
-            // 
             // TelaVisualizarTodosRegistros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,7 +354,6 @@
             this.ClientSize = new System.Drawing.Size(886, 562);
             this.Controls.Add(this.metroPanelControlesGrid);
             this.Controls.Add(this.metroGridVisualizacaoRegistros);
-            this.Controls.Add(this.metroButtonExcluirRegistro);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TelaVisualizarTodosRegistros";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
@@ -378,7 +383,7 @@
         private MetroFramework.Controls.MetroDateTime metroDateTimeTermino;
         private MetroFramework.Controls.MetroTextBox metroTextBoxFiltrar;
         private MetroFramework.Controls.MetroButton metroButtonFiltrarGrid;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabelFiltrarGridExplicativo;
         private MetroFramework.Controls.MetroComboBox metroComboBoxOrdenar;
         private MetroFramework.Controls.MetroButton metroButtonPesquisarRegistros;
         private MetroFramework.Controls.MetroButton metroButtonResetarFiltrosEGrid;

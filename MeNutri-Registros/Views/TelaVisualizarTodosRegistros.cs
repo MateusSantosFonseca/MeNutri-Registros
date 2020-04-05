@@ -134,6 +134,10 @@ namespace MeNutri_Registros.Views
         private void metroButtonFiltrarGrid_Click(object sender, EventArgs e)
         {
             string valorFiltro = UtilityClass.RemoveDiacritics(this.metroTextBoxFiltrar.Text.ToLower());
+            
+            if (string.IsNullOrWhiteSpace(valorFiltro)) 
+                atualizaGrid(null, true);
+
             if (valorFiltro.Contains("potencial"))
                 valorFiltro = TipoRegistro.Potencial_cliente.ToString().ToLower();
 
@@ -169,14 +173,41 @@ namespace MeNutri_Registros.Views
         {
             this.metroGridVisualizacaoRegistros.Columns[2].HeaderText = "Tipo de registro";
             this.metroGridVisualizacaoRegistros.Columns[5].HeaderText = "Razão social";
+            this.metroGridVisualizacaoRegistros.Columns[9].HeaderText = "E-mail";
+
+            // ver se tem como pegar o rows[0] e setar o height dele
 
             this.metroGridVisualizacaoRegistros.Columns[2].Width = 115;
             this.metroGridVisualizacaoRegistros.Columns[3].Width = 100;
             this.metroGridVisualizacaoRegistros.Columns[4].Width = 130;
             this.metroGridVisualizacaoRegistros.Columns[5].Width = 100;
             this.metroGridVisualizacaoRegistros.Columns[8].Width = 100;
-            this.metroGridVisualizacaoRegistros.Columns[9].Width = 160;
-            this.metroGridVisualizacaoRegistros.Columns[12].Width = 100;
+            this.metroGridVisualizacaoRegistros.Columns[9].Width = 155;
+            this.metroGridVisualizacaoRegistros.Columns[12].Width = 95;
+
+            this.metroGridVisualizacaoRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            this.metroGridVisualizacaoRegistros.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[2].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+
+            this.metroGridVisualizacaoRegistros.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[3].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            this.metroGridVisualizacaoRegistros.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[4].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            this.metroGridVisualizacaoRegistros.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[5].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            this.metroGridVisualizacaoRegistros.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[8].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            this.metroGridVisualizacaoRegistros.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[9].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            this.metroGridVisualizacaoRegistros.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[12].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
 
             this.metroGridVisualizacaoRegistros.Columns[0].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[1].Visible = false;
