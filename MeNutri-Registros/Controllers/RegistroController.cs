@@ -120,7 +120,6 @@ namespace MeNutri_Registros.Controllers
                 }
                 else
                 {
-                    MessageBox.Show("Não existem registros cadastrados no sistema.", "Não existem registros cadastrados", MessageBoxButtons.OK);
                     registros = null;
                 }
             }

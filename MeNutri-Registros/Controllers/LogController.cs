@@ -18,7 +18,7 @@ namespace MeNutri_Registros.Controllers
             // string diretorioAtual = (Path.GetDirectoryName(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName)) + PATH_LOGS; // Para testes
             string diretorioAtual = AppDomain.CurrentDomain.BaseDirectory + PATH_LOGS; // Para produção
             string pathArquivoTextoLog = diretorioAtual + @"\" + log.dataExcessao.ToString("dd-MM-yyyy_hh-mm-ss") + "_" +
-                                              UtilityClass.RemoveDiacritics(log.nomeExcessao.Replace(" ", "-")) + ".txt";
+                                              UtilityClass.RemoveDiacritics(log.nomeExcessao.Replace(" ", "-"), false) + ".txt";
 
             try
             {

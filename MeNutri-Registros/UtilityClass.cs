@@ -10,8 +10,14 @@ namespace MeNutri_Registros
 {
     public static class UtilityClass
     {
-        public static string RemoveDiacritics(string text)
+        public static string RemoveDiacritics(string text, bool removerTraco)
         {
+            text = text.Replace(".", "");
+            text = text.Replace("-", "");
+
+            if (removerTraco)
+                text = text.Replace("-", "");
+
             var normalizedString = text.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 

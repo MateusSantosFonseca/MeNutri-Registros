@@ -310,6 +310,7 @@
             this.pictureBoxExportarPDF.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarPDF.TabIndex = 6;
             this.pictureBoxExportarPDF.TabStop = false;
+            this.pictureBoxExportarPDF.Visible = false;
             this.pictureBoxExportarPDF.Click += new System.EventHandler(this.pictureBoxExportarPDF_Click);
             this.pictureBoxExportarPDF.MouseEnter += new System.EventHandler(this.pictureBoxExportarPDF_MouseEnter);
             // 
@@ -322,6 +323,7 @@
             this.pictureBoxExportarExcel.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarExcel.TabIndex = 5;
             this.pictureBoxExportarExcel.TabStop = false;
+            this.pictureBoxExportarExcel.Visible = false;
             this.pictureBoxExportarExcel.Click += new System.EventHandler(this.pictureBoxExportarExcel_Click);
             this.pictureBoxExportarExcel.MouseEnter += new System.EventHandler(this.pictureBoxExportarExcel_MouseEnter);
             // 

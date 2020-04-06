@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeNutri_Registros.Controllers;
+using MeNutri_Registros.Models;
 using MeNutri_Registros.Views;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace MeNutri_Registros
@@ -38,8 +40,17 @@ namespace MeNutri_Registros
 
         private void pictureBoxBuscarRegistros_Click(object sender, EventArgs e)
         {
-            TelaVisualizarTodosRegistros telaVisualizarTodosRegistros = new TelaVisualizarTodosRegistros();
-            telaVisualizarTodosRegistros.Show();
+            RegistroController registroController = new RegistroController();
+            List<RegistroModel> listaRegistros = registroController.getAllRegistros();
+            if(listaRegistros != null && listaRegistros.Count > 0)
+            {
+                TelaVisualizarTodosRegistros telaVisualizarTodosRegistros = new TelaVisualizarTodosRegistros(listaRegistros);
+                telaVisualizarTodosRegistros.Show();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Não existem registros cadastrados, a funcionalidade não pôde ser aberta", "Não há registros", MessageBoxButtons.OK, MessageBoxIcon.Error, 243);
+            }
         }
 
         private void pictureBoxAdicionarRegistro_MouseEnter(object sender, EventArgs e)

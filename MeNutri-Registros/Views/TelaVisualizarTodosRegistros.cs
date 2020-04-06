@@ -22,28 +22,34 @@ namespace MeNutri_Registros.Views
         List<RegistroModel> listaRegistrosOrdenada;
         List<RegistroModel> listaAtual; // Lista que dinamicamente troca seus valores de acordo com filtros e ordenacoes
 
-        public TelaVisualizarTodosRegistros()
+        public TelaVisualizarTodosRegistros(List<RegistroModel> lista)
         {
-            InitializeComponent();
-            this.Icon = Properties.Resources.Menutrinho_Icon;
-            this.MaximizeBox = false;
-            this.Resizable = false;
-            this.metroGridVisualizacaoRegistros.Visible = true;
-
-            if (Globals.isAdminGeral())
-                this.metroButtonExcluirRegistro.Visible = true;
-
-            this.metroComboBoxOrdenar.SelectedIndex = 0;
-
-            ajustaHorariosDatetimes();
-
             RegistroController registroController = new RegistroController();
-            this.listaRegistros = registroController.getAllRegistros();
-            this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
-            listaAtual = listaRegistrosOrdenada;
-            this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
+            this.listaRegistros = lista;
 
-            ajustaDataGrid();
+            if (listaRegistros != null && listaRegistros.Count > 0)
+            {
+                InitializeComponent();
+                this.Icon = Properties.Resources.Menutrinho_Icon;
+                this.MaximizeBox = false;
+                this.Resizable = false;
+                this.metroGridVisualizacaoRegistros.Visible = true;
+
+                if (Globals.isAdminGeral())
+                    this.metroButtonExcluirRegistro.Visible = true;
+
+                this.metroComboBoxOrdenar.SelectedIndex = 0;
+
+                ajustaHorariosDatetimes();
+
+                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                listaAtual = listaRegistrosOrdenada;
+                this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
+                pictureBoxExportarExcel.Visible = true;
+                pictureBoxExportarPDF.Visible = true;
+
+                ajustaDataGrid();
+            }
         }
 
         private void atualizaGrid([Optional] List<RegistroModel> listaAlterada, bool apenasReset)
@@ -137,7 +143,7 @@ namespace MeNutri_Registros.Views
 
         private void metroButtonFiltrarGrid_Click(object sender, EventArgs e)
         {
-            string valorFiltro = UtilityClass.RemoveDiacritics(this.metroTextBoxFiltrar.Text.ToLower());
+            string valorFiltro = UtilityClass.RemoveDiacritics(this.metroTextBoxFiltrar.Text.ToLower(), true);
 
             if (string.IsNullOrWhiteSpace(valorFiltro))
                 atualizaGrid(null, true);
@@ -283,35 +289,62 @@ namespace MeNutri_Registros.Views
                 sfd.Title = "Salvar registros em arquivo PDF";
             }
 
+            sfd.AddExtension = true;
+
             string dataAtual = DateTime.Now.ToString("dd-MM-yy_hh-mm-ss");
 
             sfd.FileName = "MeNutri_TabelaRegistros_" + dataAtual;
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                mensagem = exportadorXlsPdf.exportarTabelaParaArquivo(listaAtual, isExcel, sfd.FileName);
+                mensagem = exportadorXlsPdf.exportarTabelaParaArquivo(listaAtual, isExcel, sfd.FileName, headersDoGrid());
+
+                if (mensagem.Sucesso)
+                {
+                    this.metroGridVisualizacaoRegistros.Visible = false;
+                    MetroMessageBox.Show(this, "A tabela foi exportada com sucesso", "Tabela exportada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.metroGridVisualizacaoRegistros.Visible = true;
+
+                    if (MessageBox.Show(this, "Deseja abrir o arquivo gerado?", "Ver arquivo exportado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (File.Exists(sfd.FileName))
+                            System.Diagnostics.Process.Start(sfd.FileName);
+                    }
+                }
+                else
+                {
+                    mostraMensagemEscondeGrid(mensagem.Corpo, mensagem.Titulo);
+                }
             }
             else
             {
                 MessageBox.Show(this, "A exportação foi cancelada.", "Operação não concluida", MessageBoxButtons.OK);
             }
+        }
 
-            if (mensagem.Sucesso)
-            {
-                this.metroGridVisualizacaoRegistros.Visible = false;
-                MetroMessageBox.Show(this, "A tabela foi exportada com sucesso", "Tabela exportada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.metroGridVisualizacaoRegistros.Visible = true;
+        public List<string> headersDoGrid()
+        {
+            List<string> listaHeaders = new List<string>();
+            listaHeaders.Add("Horário de cadastro");
+            listaHeaders.Add("Tipo de registro");
+            listaHeaders.Add("Nome");
+            listaHeaders.Add("Sobrenome");
+            listaHeaders.Add("Razão Social");
+            listaHeaders.Add("CPF");
+            listaHeaders.Add("RG");
+            listaHeaders.Add("Telefone");
+            listaHeaders.Add("E-mail");
+            listaHeaders.Add("CNPJ");
+            listaHeaders.Add("CEP");
+            listaHeaders.Add("Estado");
+            listaHeaders.Add("Cidade");
+            listaHeaders.Add("Rua");
+            listaHeaders.Add("Número");
+            listaHeaders.Add("Bairro");
+            listaHeaders.Add("Complemento");
+            listaHeaders.Add("Outros");
 
-                if (MessageBox.Show(this, "Deseja abrir o arquivo gerado?", "Ver arquivo exportado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    if (File.Exists(sfd.FileName))
-                        System.Diagnostics.Process.Start(sfd.FileName);
-                }
-            }
-            else
-            {
-                mostraMensagemEscondeGrid(mensagem.Corpo, mensagem.Titulo);
-            }
+            return listaHeaders;
         }
 
         public void mostraMensagemEscondeGrid(string mensagem, string titulo)
