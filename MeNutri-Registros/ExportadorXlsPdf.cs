@@ -13,12 +13,7 @@ namespace MeNutri_Registros
 {
     public class ExportadorXlsPdf<T>
     {
-        public ExportadorXlsPdf()
-        {
-            //List<Object> listaObjetos
-            //if (verificarDisponibilidadeExcel() == true)
-            //    exportarParaExcelOuPdf(false);
-        }
+        public ExportadorXlsPdf() { }
 
         public MensagemModel exportarTabelaParaArquivo(List<T> listaGenerica, bool isExcel, string pathArquivo, List<string> headersDoGrid)
         {
@@ -80,25 +75,36 @@ namespace MeNutri_Registros
                 cabecalho.Font.Bold = true;
                 cabecalho.Interior.Color = Color.FromArgb(211, 211, 211);
 
-                xlWorkBook.SaveAs(pathArquivo, Excel.XlFileFormat.xlWorkbookNormal, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco, Excel.XlSaveAsAccessMode.xlExclusive, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco);
-                xlWorkBook.Close(true, valorEmBranco, valorEmBranco);
+                if (isExcel)
+                {
+                    xlWorkBook.SaveAs(pathArquivo, Excel.XlFileFormat.xlWorkbookNormal, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco, Excel.XlSaveAsAccessMode.xlExclusive, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco, valorEmBranco);
+                    xlWorkBook.Close(true, valorEmBranco, valorEmBranco);
+                }
+                else
+                {
+                    xlWorkSheet.PageSetup.Orientation = Excel.XlPageOrientation.xlLandscape;
+                    xlWorkBook.ExportAsFixedFormat(Excel.XlFixedFormatType.xlTypePDF, pathArquivo, Excel.XlFixedFormatQuality.xlQualityStandard);
+                    xlWorkBook.Close(false, valorEmBranco, valorEmBranco);
+                }
+
+                xlexcel.Quit();
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlexcel);
 
                 mensagem = new MensagemModel(true);
             }
 
             catch (Exception e)
             {
-                mensagem = new MensagemModel("Erro ao construir o arquivo excel/pdf", "Ocorreu um erro no momento de povoar o conteúdo do arquivo", false);
+                string tipoArquivo = isExcel ? "Excel" : "PDF";
+                mensagem = new MensagemModel($"Erro ao construir o arquivo {tipoArquivo}.", "Ocorreu um erro no momento de povoar o conteúdo do arquivo", false);
                 LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
                 LogController.logarErro(log);
-                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
             }
-
-
+            
             return mensagem;
         }
-
-
         public MensagemModel verificarDisponibilidadeExcel()
         {
             MensagemModel mensagem;

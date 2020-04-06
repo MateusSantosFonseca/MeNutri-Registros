@@ -84,6 +84,7 @@ namespace MeNutri_Registros.Views
                                                                          && registro.HorarioCadastroRegistro <= dataTerminoPeriodo
                                                                    select registro).ToList();
             listaRegistros = listaRegistrosFiltradosDatetime;
+            listaAtual = listaRegistrosFiltradosDatetime;
             atualizaGrid(listaRegistrosFiltradosDatetime, false);
         }
 
@@ -122,8 +123,6 @@ namespace MeNutri_Registros.Views
                     break;
             }
         }
-
-
         private void resetaFiltros()
         {
             metroTextBoxFiltrar.Text = "";
@@ -155,7 +154,6 @@ namespace MeNutri_Registros.Views
             listaAtual = listaFiltrada;
             atualizaGrid(listaFiltrada, false);
         }
-
         private void ajustaHorariosDatetimes()
         {
             this.metroDateTimeInicio.Format = DateTimePickerFormat.Custom;
@@ -169,7 +167,6 @@ namespace MeNutri_Registros.Views
             this.metroDateTimeInicio.Value = DateTime.Now.AddMonths(-3);
             this.metroDateTimeTermino.MinDate = metroDateTimeInicio.Value;
         }
-
         private void metroDateTimeInicio_ValueChanged(object sender, EventArgs e)
         {
             metroDateTimeTermino.MinDate = metroDateTimeInicio.Value;
