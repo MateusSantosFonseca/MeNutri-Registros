@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -19,6 +20,7 @@ namespace MeNutri_Registros.Views
     {
         List<RegistroModel> listaRegistros;
         List<RegistroModel> listaRegistrosOrdenada;
+        List<RegistroModel> listaAtual; // Lista que dinamicamente troca seus valores de acordo com filtros e ordenacoes
 
         public TelaVisualizarTodosRegistros()
         {
@@ -38,6 +40,7 @@ namespace MeNutri_Registros.Views
             RegistroController registroController = new RegistroController();
             this.listaRegistros = registroController.getAllRegistros();
             this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+            listaAtual = listaRegistrosOrdenada;
             this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
 
             ajustaDataGrid();
@@ -45,23 +48,20 @@ namespace MeNutri_Registros.Views
 
         private void atualizaGrid([Optional] List<RegistroModel> listaAlterada, bool apenasReset)
         {
-            if(listaAlterada != null && listaAlterada.Count > 0)
+            if (listaAlterada != null && listaAlterada.Count > 0)
             {
                 this.metroGridVisualizacaoRegistros.DataSource = listaAlterada;
-            } 
+            }
             else
             {
                 if (!apenasReset)
-                {
-                    this.metroGridVisualizacaoRegistros.Visible = false;
-                    MetroMessageBox.Show(this, "Os filtros aplicados retornaram uma lista vazia. Filtros e tabela resetados.",
-                                              "Erro ao iniciar tabela", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.metroGridVisualizacaoRegistros.Visible = true;
-                }
+                    mostraMensagemEscondeGrid("Os filtros aplicados retornaram uma lista vazia. Filtros e tabela resetados.", "Erro ao iniciar tabela");
+
                 resetaFiltros();
                 RegistroController registroController = new RegistroController();
                 this.listaRegistros = registroController.getAllRegistros();
                 this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                listaAtual = listaRegistrosOrdenada;
                 this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
             }
         }
@@ -91,22 +91,27 @@ namespace MeNutri_Registros.Views
             {
                 case 1:
                     listaOrdenada = listaRegistros.OrderBy(registro => registro.Nome).ToList();
+                    listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
                 case 2:
                     listaOrdenada = listaRegistros.OrderBy(registro => registro.RazaoSocial).ToList();
+                    listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
                 case 3:
                     listaOrdenada = listaRegistros.OrderBy(registro => registro.TipoRegistro).ToList();
+                    listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
                 case 4:
                     listaOrdenada = listaRegistros.OrderBy(registro => registro.Estado).ToList();
+                    listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
                 default:
                     listaOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                    listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
             }
@@ -125,23 +130,23 @@ namespace MeNutri_Registros.Views
             List<RegistroModel> listaFiltrada = new List<RegistroModel>();
             listaFiltrada = (from registro in listaRegistros
                              where registro.Nome.ToLower().Contains(filter) || registro.Sobrenome.ToLower().Contains(filter) ||
-                             registro.TipoRegistro.ToString().ToLower().Contains(filter) || registro.Estado.ToLower().Contains(filter)
+                             registro.TipoRegistro.ToString().ToLower().Equals(filter) || registro.Estado.ToLower().Contains(filter)
                              select registro).ToList();
-
             return listaFiltrada;
         }
 
         private void metroButtonFiltrarGrid_Click(object sender, EventArgs e)
         {
             string valorFiltro = UtilityClass.RemoveDiacritics(this.metroTextBoxFiltrar.Text.ToLower());
-            
-            if (string.IsNullOrWhiteSpace(valorFiltro)) 
+
+            if (string.IsNullOrWhiteSpace(valorFiltro))
                 atualizaGrid(null, true);
 
             if (valorFiltro.Contains("potencial"))
                 valorFiltro = TipoRegistro.Potencial_cliente.ToString().ToLower();
 
             List<RegistroModel> listaFiltrada = getAllRegistrosByFilter(valorFiltro);
+            listaAtual = listaFiltrada;
             atualizaGrid(listaFiltrada, false);
         }
 
@@ -236,6 +241,84 @@ namespace MeNutri_Registros.Views
         private void pictureBoxExportarPDF_MouseEnter(object sender, EventArgs e)
         {
             pictureBoxExportarPDF.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBoxExportarExcel_Click(object sender, EventArgs e)
+        {
+            exportarParaArquivo(true);
+        }
+
+        private void pictureBoxExportarPDF_Click(object sender, EventArgs e)
+        {
+            exportarParaArquivo(false);
+        }
+
+        private void exportarParaArquivo(bool isExcel)
+        {
+            ExportadorXlsPdf<RegistroModel> exportadorXlsPdf = new ExportadorXlsPdf<RegistroModel>();
+            MensagemModel mensagem;
+
+            if (listaRegistros.Count == 0)
+            {
+                mostraMensagemEscondeGrid("A tabela está vazia, não há registros para serem exportados!.", "Erro ao exportar registros");
+                return;
+            }
+
+            mensagem = exportadorXlsPdf.verificarDisponibilidadeExcel();
+            if (!mensagem.Sucesso)
+            {
+                mostraMensagemEscondeGrid("O Excel não está disponível neste computador.", "Erro ao iniciar excel");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (isExcel)
+            {
+                sfd.Filter = "Excel |*.xls";
+                sfd.Title = "Salvar registros em arquivo EXCEL";
+            }
+            else
+            {
+                sfd.Filter = "PDF |*.pdf";
+                sfd.Title = "Salvar registros em arquivo PDF";
+            }
+
+            string dataAtual = DateTime.Now.ToString("dd-MM-yy_hh-mm-ss");
+
+            sfd.FileName = "MeNutri_TabelaRegistros_" + dataAtual;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                mensagem = exportadorXlsPdf.exportarTabelaParaArquivo(listaAtual, isExcel, sfd.FileName);
+            }
+            else
+            {
+                MessageBox.Show(this, "A exportação foi cancelada.", "Operação não concluida", MessageBoxButtons.OK);
+            }
+
+            if (mensagem.Sucesso)
+            {
+                this.metroGridVisualizacaoRegistros.Visible = false;
+                MetroMessageBox.Show(this, "A tabela foi exportada com sucesso", "Tabela exportada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.metroGridVisualizacaoRegistros.Visible = true;
+
+                if (MessageBox.Show(this, "Deseja abrir o arquivo gerado?", "Ver arquivo exportado.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (File.Exists(sfd.FileName))
+                        System.Diagnostics.Process.Start(sfd.FileName);
+                }
+            }
+            else
+            {
+                mostraMensagemEscondeGrid(mensagem.Corpo, mensagem.Titulo);
+            }
+        }
+
+        public void mostraMensagemEscondeGrid(string mensagem, string titulo)
+        {
+            this.metroGridVisualizacaoRegistros.Visible = false;
+            MetroMessageBox.Show(this, mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            this.metroGridVisualizacaoRegistros.Visible = true;
         }
     }
 }
