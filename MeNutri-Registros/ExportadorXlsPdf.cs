@@ -54,9 +54,7 @@ namespace MeNutri_Registros
                         string valor = prop.GetValue(obj, null).ToString();
 
                         if (prop.PropertyType.IsEnum)
-                        {
                             valor = UtilityClass.substituiCaracteresEspeciaisPorEspaco(valor);
-                        }
 
                         xlWorkSheet.Cells[countLinha, countColuna] = "'" + valor; // o ' serve para todos campos serem tratados como string
 

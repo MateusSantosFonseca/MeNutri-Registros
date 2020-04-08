@@ -361,8 +361,11 @@ namespace MeNutri_Registros.Views
 
         public void controlaDisponibilidadeControles()
         {
-            if (!Globals.isAdminGeral())
+            if (Globals.isAdminGeral())
+            {
                 this.metroButtonExcluirRegistro.Enabled = true;
+                this.metroButtonExcluirRegistro.Visible = true;
+            }
 
             if (Globals.isAdminComum() || Globals.isAdminGeral())
                 this.metroButtonEditarRegistro.Enabled = true;
