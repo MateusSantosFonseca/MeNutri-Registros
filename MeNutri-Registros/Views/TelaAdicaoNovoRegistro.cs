@@ -39,9 +39,12 @@ namespace MeNutri_Registros.Views
                     RazaoSocial = !string.IsNullOrWhiteSpace(this.metroTextBoxRazaoSocial.Text) ? this.metroTextBoxRazaoSocial.Text : "vazio",
                     Nome = !string.IsNullOrWhiteSpace(this.metroTextBoxNome.Text) ? this.metroTextBoxNome.Text : "vazio",
                     Sobrenome = !string.IsNullOrWhiteSpace(this.metroTextBoxSobrenome.Text) ? this.metroTextBoxSobrenome.Text : "vazio",
+                    CargoDiretoria = !string.IsNullOrWhiteSpace(this.metroTextBoxCargoEDiretoria.Text) ? this.metroTextBoxCargoEDiretoria.Text : "vazio",
                     CPF = !string.IsNullOrWhiteSpace(this.metroTextBoxCPF.Text) ? UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxCPF.Text), true) : "vazio",
                     RG = !string.IsNullOrWhiteSpace(this.metroTextBoxRG.Text) ? UtilityClass.RemoveDiacritics(this.metroTextBoxRG.Text, true) : "vazio",
                     Telefone = !string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) ? UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text), true) : "vazio",
+                    Instagram = !string.IsNullOrWhiteSpace(this.metroTextBoxInstagram.Text) ? this.metroTextBoxInstagram.Text : "vazio",
+                    Whatsapp = !string.IsNullOrWhiteSpace(this.metroTextBoxWhatsapp.Text) ? UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxWhatsapp.Text), true) : "vazio",
                     Email = !string.IsNullOrWhiteSpace(this.metroTextBoxEmail.Text) ? this.metroTextBoxEmail.Text : "vazio",
                     CNPJ = !string.IsNullOrWhiteSpace(this.metroTextBoxCNPJ.Text) ? UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxCNPJ.Text), true) : "vazio",
                     CEP = !string.IsNullOrWhiteSpace(this.metroTextBoxCEP.Text) ? UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxCEP.Text), true) : "vazio",
@@ -65,7 +68,7 @@ namespace MeNutri_Registros.Views
                 bool haCamposIncorretos = verificarCamposIncorretos();
                 if (haCamposIncorretos)
                 {
-                    MessageBox.Show("Existem campos com preenchimento incorreto ou não preenchido.\n\nOs campos: \"Nome\", \"Sobrenome\" e \"Telefone\" são obrigatórios e devem ser preenchidos corretamente.\n\nVerifique estes campos ou corrija os campos mal preenchidos e tente novamente!",
+                    MessageBox.Show("Existem campos com preenchimento incorreto ou não preenchido.\n\nOs campos: Telefone e Tipo de Registro são obrigatórios e devem ser preenchidos corretamente.\n\nVerifique estes campos ou corrija os campos mal preenchidos e tente novamente!",
                                                 "Adição não efetuada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
@@ -85,9 +88,8 @@ namespace MeNutri_Registros.Views
         {
             Regex regexEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
-            if (this.metroTextBoxNome.Text.Length < 2 || this.metroTextBoxSobrenome.Text.Length < 2 ||
-                                UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text).Length < 8 ||
-                                (!regexEmail.IsMatch(this.metroTextBoxEmail.Text) && metroTextBoxEmail.Text.Length > 0))
+            if (UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text).Length < 8  ||
+                    (!this.metroRadioButtonCliente.Checked && !this.metroRadioButtonPotencialCliente.Checked && !this.metroRadioButtonFuncionario.Checked))
                 return true;
 
             return false;
@@ -149,7 +151,7 @@ namespace MeNutri_Registros.Views
             }
         }
 
-        public void ajustarLayoutControles_FuncionarioCheckedChange(object sender, EventArgs args)
+        public void ajustarControles_FuncionarioCheckedChange(object sender, EventArgs args)
         {
             if (metroRadioButtonFuncionario.Checked)
             {
@@ -160,6 +162,12 @@ namespace MeNutri_Registros.Views
                 // Necessário para o controle não bugar:
                 metroTextBoxSobrenome.Visible = false; 
                 metroTextBoxSobrenome.Visible = true;
+
+                this.metroLabelCNPJ.Visible = false;
+                this.metroTextBoxCNPJ.Visible = false;
+
+                this.metroLabelCargoEDiretoria.Visible = true;
+                this.metroTextBoxCargoEDiretoria.Visible = true;
             }
             else
             {
@@ -172,10 +180,24 @@ namespace MeNutri_Registros.Views
                 // Necessário para o controle não bugar:
                 metroTextBoxSobrenome.Visible = false;
                 metroTextBoxSobrenome.Visible = true;
+
+                this.metroLabelCNPJ.Visible = true;
+                this.metroTextBoxCNPJ.Visible = true;
+
+                this.metroLabelCargoEDiretoria.Visible = false;
+                this.metroTextBoxCargoEDiretoria.Visible = false;
+
+                this.metroTextBoxCargoEDiretoria.Text = string.Empty;
             }
+        }
 
-
-
+        public void ajustar_ClienteCheckedChange(object sender, EventArgs args)
+        {
+            if (metroRadioButtonFuncionario.Checked)
+            {
+                this.metroTextBoxRazaoSocial.Text = string.Empty;
+                this.metroTextBoxCNPJ.Text = string.Empty;
+            }
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGridVisualizacaoRegistros = new MetroFramework.Controls.MetroGrid();
             this.metroPanelControlesGrid = new MetroFramework.Controls.MetroPanel();
             this.metroButtonExcluirRegistro = new MetroFramework.Controls.MetroButton();
@@ -64,41 +64,41 @@
             this.metroGridVisualizacaoRegistros.CausesValidation = false;
             this.metroGridVisualizacaoRegistros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGridVisualizacaoRegistros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridVisualizacaoRegistros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridVisualizacaoRegistros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.metroGridVisualizacaoRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridVisualizacaoRegistros.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGridVisualizacaoRegistros.DefaultCellStyle = dataGridViewCellStyle20;
             this.metroGridVisualizacaoRegistros.EnableHeadersVisualStyles = false;
             this.metroGridVisualizacaoRegistros.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGridVisualizacaoRegistros.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGridVisualizacaoRegistros.Location = new System.Drawing.Point(15, 175);
-            this.metroGridVisualizacaoRegistros.Margin = new System.Windows.Forms.Padding(2);
+            this.metroGridVisualizacaoRegistros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroGridVisualizacaoRegistros.MaximumSize = new System.Drawing.Size(856, 372);
             this.metroGridVisualizacaoRegistros.MinimumSize = new System.Drawing.Size(856, 372);
             this.metroGridVisualizacaoRegistros.Name = "metroGridVisualizacaoRegistros";
             this.metroGridVisualizacaoRegistros.ReadOnly = true;
             this.metroGridVisualizacaoRegistros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridVisualizacaoRegistros.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridVisualizacaoRegistros.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.metroGridVisualizacaoRegistros.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridVisualizacaoRegistros.RowTemplate.Height = 28;
             this.metroGridVisualizacaoRegistros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -140,6 +140,7 @@
             // 
             // metroButtonExcluirRegistro
             // 
+            this.metroButtonExcluirRegistro.Enabled = false;
             this.metroButtonExcluirRegistro.Location = new System.Drawing.Point(635, 3);
             this.metroButtonExcluirRegistro.Name = "metroButtonExcluirRegistro";
             this.metroButtonExcluirRegistro.Size = new System.Drawing.Size(87, 27);
@@ -166,6 +167,7 @@
             // 
             // metroButtonPesquisarRegistros
             // 
+            this.metroButtonPesquisarRegistros.Enabled = false;
             this.metroButtonPesquisarRegistros.Location = new System.Drawing.Point(391, 70);
             this.metroButtonPesquisarRegistros.Name = "metroButtonPesquisarRegistros";
             this.metroButtonPesquisarRegistros.Size = new System.Drawing.Size(114, 26);
@@ -200,6 +202,7 @@
             // 
             // metroButtonFiltrarGrid
             // 
+            this.metroButtonFiltrarGrid.Enabled = false;
             this.metroButtonFiltrarGrid.Location = new System.Drawing.Point(635, 36);
             this.metroButtonFiltrarGrid.Name = "metroButtonFiltrarGrid";
             this.metroButtonFiltrarGrid.Size = new System.Drawing.Size(87, 27);
@@ -228,9 +231,9 @@
             // 
             // 
             this.metroTextBoxFiltrar.CustomButton.Image = null;
-            this.metroTextBoxFiltrar.CustomButton.Location = new System.Drawing.Point(61, 1);
+            this.metroTextBoxFiltrar.CustomButton.Location = new System.Drawing.Point(41, 1);
             this.metroTextBoxFiltrar.CustomButton.Name = "";
-            this.metroTextBoxFiltrar.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBoxFiltrar.CustomButton.Size = new System.Drawing.Size(17, 16);
             this.metroTextBoxFiltrar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxFiltrar.CustomButton.TabIndex = 1;
             this.metroTextBoxFiltrar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -305,12 +308,12 @@
             // 
             this.pictureBoxExportarPDF.BackgroundImage = global::MeNutri_Registros.Properties.Resources.pdf;
             this.pictureBoxExportarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxExportarPDF.Enabled = false;
             this.pictureBoxExportarPDF.Location = new System.Drawing.Point(798, 51);
             this.pictureBoxExportarPDF.Name = "pictureBoxExportarPDF";
             this.pictureBoxExportarPDF.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarPDF.TabIndex = 6;
             this.pictureBoxExportarPDF.TabStop = false;
-            this.pictureBoxExportarPDF.Visible = false;
             this.pictureBoxExportarPDF.Click += new System.EventHandler(this.pictureBoxExportarPDF_Click);
             this.pictureBoxExportarPDF.MouseEnter += new System.EventHandler(this.pictureBoxExportarPDF_MouseEnter);
             // 
@@ -318,17 +321,18 @@
             // 
             this.pictureBoxExportarExcel.BackgroundImage = global::MeNutri_Registros.Properties.Resources.xls;
             this.pictureBoxExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxExportarExcel.Enabled = false;
             this.pictureBoxExportarExcel.Location = new System.Drawing.Point(747, 51);
             this.pictureBoxExportarExcel.Name = "pictureBoxExportarExcel";
             this.pictureBoxExportarExcel.Size = new System.Drawing.Size(45, 45);
             this.pictureBoxExportarExcel.TabIndex = 5;
             this.pictureBoxExportarExcel.TabStop = false;
-            this.pictureBoxExportarExcel.Visible = false;
             this.pictureBoxExportarExcel.Click += new System.EventHandler(this.pictureBoxExportarExcel_Click);
             this.pictureBoxExportarExcel.MouseEnter += new System.EventHandler(this.pictureBoxExportarExcel_MouseEnter);
             // 
             // metroButtonEditarRegistro
             // 
+            this.metroButtonEditarRegistro.Enabled = false;
             this.metroButtonEditarRegistro.Location = new System.Drawing.Point(635, 69);
             this.metroButtonEditarRegistro.Name = "metroButtonEditarRegistro";
             this.metroButtonEditarRegistro.Size = new System.Drawing.Size(87, 27);
@@ -341,6 +345,7 @@
             // 
             // metroButtonVisualizarRegistro
             // 
+            this.metroButtonVisualizarRegistro.Enabled = false;
             this.metroButtonVisualizarRegistro.Location = new System.Drawing.Point(530, 69);
             this.metroButtonVisualizarRegistro.Name = "metroButtonVisualizarRegistro";
             this.metroButtonVisualizarRegistro.Size = new System.Drawing.Size(87, 27);
@@ -358,7 +363,7 @@
             this.ClientSize = new System.Drawing.Size(886, 562);
             this.Controls.Add(this.metroPanelControlesGrid);
             this.Controls.Add(this.metroGridVisualizacaoRegistros);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TelaVisualizarTodosRegistros";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Style = MetroFramework.MetroColorStyle.Lime;

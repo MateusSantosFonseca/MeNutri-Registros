@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.metroPanelAdicionarRegistros = new MetroFramework.Controls.MetroPanel();
+            this.metroTextBoxCargoEDiretoria = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelCargoEDiretoria = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBoxWhatsapp = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelWhatsapp = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBoxInstagram = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelInstagram = new MetroFramework.Controls.MetroLabel();
             this.metroLabelNomeEmpresa = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxRazaoSocial = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxComplemento = new MetroFramework.Controls.MetroTextBox();
@@ -76,6 +82,12 @@
             // metroPanelAdicionarRegistros
             // 
             this.metroPanelAdicionarRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroTextBoxCargoEDiretoria);
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroLabelCargoEDiretoria);
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroTextBoxWhatsapp);
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroLabelWhatsapp);
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroTextBoxInstagram);
+            this.metroPanelAdicionarRegistros.Controls.Add(this.metroLabelInstagram);
             this.metroPanelAdicionarRegistros.Controls.Add(this.metroLabelNomeEmpresa);
             this.metroPanelAdicionarRegistros.Controls.Add(this.metroTextBoxRazaoSocial);
             this.metroPanelAdicionarRegistros.Controls.Add(this.metroTextBoxComplemento);
@@ -121,6 +133,140 @@
             this.metroPanelAdicionarRegistros.VerticalScrollbarBarColor = true;
             this.metroPanelAdicionarRegistros.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelAdicionarRegistros.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBoxCargoEDiretoria
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBoxCargoEDiretoria.CustomButton.Image = null;
+            this.metroTextBoxCargoEDiretoria.CustomButton.Location = new System.Drawing.Point(185, 1);
+            this.metroTextBoxCargoEDiretoria.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxCargoEDiretoria.CustomButton.Name = "";
+            this.metroTextBoxCargoEDiretoria.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxCargoEDiretoria.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxCargoEDiretoria.CustomButton.TabIndex = 1;
+            this.metroTextBoxCargoEDiretoria.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxCargoEDiretoria.CustomButton.UseSelectable = true;
+            this.metroTextBoxCargoEDiretoria.CustomButton.Visible = false;
+            this.metroTextBoxCargoEDiretoria.Lines = new string[0];
+            this.metroTextBoxCargoEDiretoria.Location = new System.Drawing.Point(547, 150);
+            this.metroTextBoxCargoEDiretoria.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxCargoEDiretoria.MaxLength = 32767;
+            this.metroTextBoxCargoEDiretoria.Name = "metroTextBoxCargoEDiretoria";
+            this.metroTextBoxCargoEDiretoria.PasswordChar = '\0';
+            this.metroTextBoxCargoEDiretoria.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxCargoEDiretoria.SelectedText = "";
+            this.metroTextBoxCargoEDiretoria.SelectionLength = 0;
+            this.metroTextBoxCargoEDiretoria.SelectionStart = 0;
+            this.metroTextBoxCargoEDiretoria.ShortcutsEnabled = true;
+            this.metroTextBoxCargoEDiretoria.Size = new System.Drawing.Size(207, 23);
+            this.metroTextBoxCargoEDiretoria.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxCargoEDiretoria.TabIndex = 11;
+            this.metroTextBoxCargoEDiretoria.UseSelectable = true;
+            this.metroTextBoxCargoEDiretoria.UseStyleColors = true;
+            this.metroTextBoxCargoEDiretoria.Visible = false;
+            this.metroTextBoxCargoEDiretoria.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxCargoEDiretoria.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabelCargoEDiretoria
+            // 
+            this.metroLabelCargoEDiretoria.AutoSize = true;
+            this.metroLabelCargoEDiretoria.Location = new System.Drawing.Point(434, 154);
+            this.metroLabelCargoEDiretoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabelCargoEDiretoria.Name = "metroLabelCargoEDiretoria";
+            this.metroLabelCargoEDiretoria.Size = new System.Drawing.Size(109, 19);
+            this.metroLabelCargoEDiretoria.TabIndex = 44;
+            this.metroLabelCargoEDiretoria.Text = "Cargo/Diretoria: ";
+            this.metroLabelCargoEDiretoria.Visible = false;
+            // 
+            // metroTextBoxWhatsapp
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBoxWhatsapp.CustomButton.Image = null;
+            this.metroTextBoxWhatsapp.CustomButton.Location = new System.Drawing.Point(81, 1);
+            this.metroTextBoxWhatsapp.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxWhatsapp.CustomButton.Name = "";
+            this.metroTextBoxWhatsapp.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxWhatsapp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxWhatsapp.CustomButton.TabIndex = 1;
+            this.metroTextBoxWhatsapp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxWhatsapp.CustomButton.UseSelectable = true;
+            this.metroTextBoxWhatsapp.CustomButton.Visible = false;
+            this.metroTextBoxWhatsapp.Lines = new string[0];
+            this.metroTextBoxWhatsapp.Location = new System.Drawing.Point(73, 328);
+            this.metroTextBoxWhatsapp.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxWhatsapp.MaxLength = 32767;
+            this.metroTextBoxWhatsapp.Name = "metroTextBoxWhatsapp";
+            this.metroTextBoxWhatsapp.PasswordChar = '\0';
+            this.metroTextBoxWhatsapp.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxWhatsapp.SelectedText = "";
+            this.metroTextBoxWhatsapp.SelectionLength = 0;
+            this.metroTextBoxWhatsapp.SelectionStart = 0;
+            this.metroTextBoxWhatsapp.ShortcutsEnabled = true;
+            this.metroTextBoxWhatsapp.Size = new System.Drawing.Size(103, 23);
+            this.metroTextBoxWhatsapp.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxWhatsapp.TabIndex = 19;
+            this.metroTextBoxWhatsapp.UseSelectable = true;
+            this.metroTextBoxWhatsapp.UseStyleColors = true;
+            this.metroTextBoxWhatsapp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxWhatsapp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabelWhatsapp
+            // 
+            this.metroLabelWhatsapp.AutoSize = true;
+            this.metroLabelWhatsapp.Location = new System.Drawing.Point(19, 328);
+            this.metroLabelWhatsapp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabelWhatsapp.Name = "metroLabelWhatsapp";
+            this.metroLabelWhatsapp.Size = new System.Drawing.Size(48, 19);
+            this.metroLabelWhatsapp.TabIndex = 42;
+            this.metroLabelWhatsapp.Text = "Whats:";
+            // 
+            // metroTextBoxInstagram
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBoxInstagram.CustomButton.Image = null;
+            this.metroTextBoxInstagram.CustomButton.Location = new System.Drawing.Point(69, 1);
+            this.metroTextBoxInstagram.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxInstagram.CustomButton.Name = "";
+            this.metroTextBoxInstagram.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxInstagram.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxInstagram.CustomButton.TabIndex = 1;
+            this.metroTextBoxInstagram.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxInstagram.CustomButton.UseSelectable = true;
+            this.metroTextBoxInstagram.CustomButton.Visible = false;
+            this.metroTextBoxInstagram.Lines = new string[0];
+            this.metroTextBoxInstagram.Location = new System.Drawing.Point(283, 328);
+            this.metroTextBoxInstagram.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBoxInstagram.MaxLength = 32767;
+            this.metroTextBoxInstagram.Name = "metroTextBoxInstagram";
+            this.metroTextBoxInstagram.PasswordChar = '\0';
+            this.metroTextBoxInstagram.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxInstagram.SelectedText = "";
+            this.metroTextBoxInstagram.SelectionLength = 0;
+            this.metroTextBoxInstagram.SelectionStart = 0;
+            this.metroTextBoxInstagram.ShortcutsEnabled = true;
+            this.metroTextBoxInstagram.Size = new System.Drawing.Size(91, 23);
+            this.metroTextBoxInstagram.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTextBoxInstagram.TabIndex = 20;
+            this.metroTextBoxInstagram.UseSelectable = true;
+            this.metroTextBoxInstagram.UseStyleColors = true;
+            this.metroTextBoxInstagram.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxInstagram.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabelInstagram
+            // 
+            this.metroLabelInstagram.AutoSize = true;
+            this.metroLabelInstagram.Location = new System.Drawing.Point(209, 328);
+            this.metroLabelInstagram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabelInstagram.Name = "metroLabelInstagram";
+            this.metroLabelInstagram.Size = new System.Drawing.Size(70, 19);
+            this.metroLabelInstagram.TabIndex = 40;
+            this.metroLabelInstagram.Text = "Instagram:";
             // 
             // metroLabelNomeEmpresa
             // 
@@ -178,7 +324,7 @@
             this.metroTextBoxComplemento.CustomButton.UseSelectable = true;
             this.metroTextBoxComplemento.CustomButton.Visible = false;
             this.metroTextBoxComplemento.Lines = new string[0];
-            this.metroTextBoxComplemento.Location = new System.Drawing.Point(491, 271);
+            this.metroTextBoxComplemento.Location = new System.Drawing.Point(502, 271);
             this.metroTextBoxComplemento.MaxLength = 100;
             this.metroTextBoxComplemento.Name = "metroTextBoxComplemento";
             this.metroTextBoxComplemento.PasswordChar = '\0';
@@ -233,7 +379,7 @@
             // 
             // 
             this.metroTextBoxNumero.CustomButton.Image = null;
-            this.metroTextBoxNumero.CustomButton.Location = new System.Drawing.Point(33, 1);
+            this.metroTextBoxNumero.CustomButton.Location = new System.Drawing.Point(46, 1);
             this.metroTextBoxNumero.CustomButton.Name = "";
             this.metroTextBoxNumero.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBoxNumero.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -251,7 +397,7 @@
             this.metroTextBoxNumero.SelectionLength = 0;
             this.metroTextBoxNumero.SelectionStart = 0;
             this.metroTextBoxNumero.ShortcutsEnabled = true;
-            this.metroTextBoxNumero.Size = new System.Drawing.Size(55, 23);
+            this.metroTextBoxNumero.Size = new System.Drawing.Size(68, 23);
             this.metroTextBoxNumero.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTextBoxNumero.TabIndex = 16;
             this.metroTextBoxNumero.UseSelectable = true;
@@ -352,7 +498,7 @@
             // metroLabelComplemento
             // 
             this.metroLabelComplemento.AutoSize = true;
-            this.metroLabelComplemento.Location = new System.Drawing.Point(388, 275);
+            this.metroLabelComplemento.Location = new System.Drawing.Point(398, 275);
             this.metroLabelComplemento.Name = "metroLabelComplemento";
             this.metroLabelComplemento.Size = new System.Drawing.Size(97, 19);
             this.metroLabelComplemento.TabIndex = 37;
@@ -556,7 +702,7 @@
             // 
             // 
             this.metroTextBoxOutros.CustomButton.Image = null;
-            this.metroTextBoxOutros.CustomButton.Location = new System.Drawing.Point(407, 1);
+            this.metroTextBoxOutros.CustomButton.Location = new System.Drawing.Point(84, 1);
             this.metroTextBoxOutros.CustomButton.Name = "";
             this.metroTextBoxOutros.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBoxOutros.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -565,7 +711,7 @@
             this.metroTextBoxOutros.CustomButton.UseSelectable = true;
             this.metroTextBoxOutros.CustomButton.Visible = false;
             this.metroTextBoxOutros.Lines = new string[0];
-            this.metroTextBoxOutros.Location = new System.Drawing.Point(73, 335);
+            this.metroTextBoxOutros.Location = new System.Drawing.Point(471, 328);
             this.metroTextBoxOutros.MaxLength = 300;
             this.metroTextBoxOutros.Name = "metroTextBoxOutros";
             this.metroTextBoxOutros.PasswordChar = '\0';
@@ -574,9 +720,9 @@
             this.metroTextBoxOutros.SelectionLength = 0;
             this.metroTextBoxOutros.SelectionStart = 0;
             this.metroTextBoxOutros.ShortcutsEnabled = true;
-            this.metroTextBoxOutros.Size = new System.Drawing.Size(429, 23);
+            this.metroTextBoxOutros.Size = new System.Drawing.Size(106, 23);
             this.metroTextBoxOutros.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroTextBoxOutros.TabIndex = 18;
+            this.metroTextBoxOutros.TabIndex = 21;
             this.metroTextBoxOutros.UseSelectable = true;
             this.metroTextBoxOutros.UseStyleColors = true;
             this.metroTextBoxOutros.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -718,7 +864,7 @@
             // metroLabelOutros
             // 
             this.metroLabelOutros.AutoSize = true;
-            this.metroLabelOutros.Location = new System.Drawing.Point(18, 339);
+            this.metroLabelOutros.Location = new System.Drawing.Point(406, 328);
             this.metroLabelOutros.Name = "metroLabelOutros";
             this.metroLabelOutros.Size = new System.Drawing.Size(52, 19);
             this.metroLabelOutros.TabIndex = 7;
@@ -816,7 +962,7 @@
             this.metroButtonAdicionarRegistro.Name = "metroButtonAdicionarRegistro";
             this.metroButtonAdicionarRegistro.Size = new System.Drawing.Size(130, 34);
             this.metroButtonAdicionarRegistro.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroButtonAdicionarRegistro.TabIndex = 19;
+            this.metroButtonAdicionarRegistro.TabIndex = 22;
             this.metroButtonAdicionarRegistro.Text = "Adicionar registro";
             this.metroButtonAdicionarRegistro.UseSelectable = true;
             this.metroButtonAdicionarRegistro.Click += new System.EventHandler(this.metroButtonAdicionarRegistro_Click);
@@ -840,15 +986,14 @@
             // metroRadioButtonCliente
             // 
             this.metroRadioButtonCliente.AutoSize = true;
-            this.metroRadioButtonCliente.Checked = true;
             this.metroRadioButtonCliente.Location = new System.Drawing.Point(3, 5);
             this.metroRadioButtonCliente.Name = "metroRadioButtonCliente";
             this.metroRadioButtonCliente.Size = new System.Drawing.Size(60, 15);
             this.metroRadioButtonCliente.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroRadioButtonCliente.TabIndex = 3;
-            this.metroRadioButtonCliente.TabStop = true;
             this.metroRadioButtonCliente.Text = "Cliente";
             this.metroRadioButtonCliente.UseSelectable = true;
+            this.metroRadioButtonCliente.CheckedChanged += new System.EventHandler(this.ajustar_ClienteCheckedChange);
             // 
             // metroRadioButtonFuncionario
             // 
@@ -858,9 +1003,10 @@
             this.metroRadioButtonFuncionario.Size = new System.Drawing.Size(86, 15);
             this.metroRadioButtonFuncionario.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroRadioButtonFuncionario.TabIndex = 1;
+            this.metroRadioButtonFuncionario.TabStop = true;
             this.metroRadioButtonFuncionario.Text = "Funcionário";
             this.metroRadioButtonFuncionario.UseSelectable = true;
-            this.metroRadioButtonFuncionario.CheckedChanged += new System.EventHandler(this.ajustarLayoutControles_FuncionarioCheckedChange);
+            this.metroRadioButtonFuncionario.CheckedChanged += new System.EventHandler(this.ajustarControles_FuncionarioCheckedChange);
             // 
             // metroRadioButtonPotencialCliente
             // 
@@ -870,8 +1016,10 @@
             this.metroRadioButtonPotencialCliente.Size = new System.Drawing.Size(110, 15);
             this.metroRadioButtonPotencialCliente.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroRadioButtonPotencialCliente.TabIndex = 2;
+            this.metroRadioButtonPotencialCliente.TabStop = true;
             this.metroRadioButtonPotencialCliente.Text = "Potencial cliente";
             this.metroRadioButtonPotencialCliente.UseSelectable = true;
+            this.metroRadioButtonPotencialCliente.CheckedChanged += new System.EventHandler(this.ajustar_ClienteCheckedChange);
             // 
             // metroLabelTipoDeRegistro
             // 
@@ -946,5 +1094,11 @@
         private MetroFramework.Controls.MetroLabel metroLabelTipoDeRegistro;
         private MetroFramework.Controls.MetroLabel metroLabelNomeEmpresa;
         private MetroFramework.Controls.MetroTextBox metroTextBoxRazaoSocial;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxWhatsapp;
+        private MetroFramework.Controls.MetroLabel metroLabelWhatsapp;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxInstagram;
+        private MetroFramework.Controls.MetroLabel metroLabelInstagram;
+        private MetroFramework.Controls.MetroLabel metroLabelCargoEDiretoria;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxCargoEDiretoria;
     }
 }

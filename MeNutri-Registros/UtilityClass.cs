@@ -13,7 +13,6 @@ namespace MeNutri_Registros
         public static string RemoveDiacritics(string text, bool removerTraco)
         {
             text = text.Replace(".", "");
-            text = text.Replace("-", "");
 
             if (removerTraco)
                 text = text.Replace("-", "");
@@ -33,9 +32,15 @@ namespace MeNutri_Registros
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
-        public static String retornaApenasNumeros(string baseString)
+        public static string retornaApenasNumeros(string baseString)
         {
             return Regex.Replace(baseString, "[^0-9.]", "").Trim();
+        }
+
+        public static string substituiCaracteresEspeciaisPorEspaco(string texto)
+        {
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            return rgx.Replace(texto, " ");
         }
         public static string getNomeUFbyIniciais(string iniciaisEstado)
         {

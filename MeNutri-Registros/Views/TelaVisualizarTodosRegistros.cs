@@ -30,14 +30,11 @@ namespace MeNutri_Registros.Views
             if (listaRegistros != null && listaRegistros.Count > 0)
             {
                 InitializeComponent();
+
                 this.Icon = Properties.Resources.Menutrinho_Icon;
                 this.MaximizeBox = false;
                 this.Resizable = false;
                 this.metroGridVisualizacaoRegistros.Visible = true;
-
-                if (Globals.isAdminGeral())
-                    this.metroButtonExcluirRegistro.Visible = true;
-
                 this.metroComboBoxOrdenar.SelectedIndex = 0;
 
                 ajustaHorariosDatetimes();
@@ -45,11 +42,11 @@ namespace MeNutri_Registros.Views
                 this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
                 listaAtual = listaRegistrosOrdenada;
                 this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
-                pictureBoxExportarExcel.Visible = true;
-                pictureBoxExportarPDF.Visible = true;
 
+                controlaDisponibilidadeControles();
                 ajustaDataGrid();
             }
+
         }
 
         private void atualizaGrid([Optional] List<RegistroModel> listaAlterada, bool apenasReset)
@@ -132,10 +129,14 @@ namespace MeNutri_Registros.Views
 
         private List<RegistroModel> getAllRegistrosByFilter(string filter)
         {
+            filter = UtilityClass.RemoveDiacritics(filter, true).ToLower();
+
             List<RegistroModel> listaFiltrada = new List<RegistroModel>();
             listaFiltrada = (from registro in listaRegistros
                              where registro.Nome.ToLower().Contains(filter) || registro.Sobrenome.ToLower().Contains(filter) ||
                              registro.TipoRegistro.ToString().ToLower().Equals(filter) || registro.Estado.ToLower().Contains(filter)
+                             || registro.Telefone.ToString().ToLower().Contains(filter) || registro.CPF.Contains(filter)
+                             || registro.RazaoSocial.ToLower().Contains(filter)
                              select registro).ToList();
             return listaFiltrada;
         }
@@ -164,7 +165,7 @@ namespace MeNutri_Registros.Views
             this.metroDateTimeInicio.MaxDate = DateTime.Now;
             this.metroDateTimeTermino.MaxDate = DateTime.Now;
             this.metroDateTimeInicio.MinDate = new DateTime(2020, 01, 01);
-            this.metroDateTimeInicio.Value = DateTime.Now.AddMonths(-3);
+            this.metroDateTimeInicio.Value = DateTime.Now.AddDays(-7);
             this.metroDateTimeTermino.MinDate = metroDateTimeInicio.Value;
         }
         private void metroDateTimeInicio_ValueChanged(object sender, EventArgs e)
@@ -181,7 +182,7 @@ namespace MeNutri_Registros.Views
         {
             this.metroGridVisualizacaoRegistros.Columns[2].HeaderText = "Tipo de registro";
             this.metroGridVisualizacaoRegistros.Columns[5].HeaderText = "Razão social";
-            this.metroGridVisualizacaoRegistros.Columns[9].HeaderText = "E-mail";
+            this.metroGridVisualizacaoRegistros.Columns[12].HeaderText = "E-mail";
 
             // ver se tem como pegar o rows[0] e setar o height dele
 
@@ -189,15 +190,14 @@ namespace MeNutri_Registros.Views
             this.metroGridVisualizacaoRegistros.Columns[3].Width = 100;
             this.metroGridVisualizacaoRegistros.Columns[4].Width = 130;
             this.metroGridVisualizacaoRegistros.Columns[5].Width = 100;
-            this.metroGridVisualizacaoRegistros.Columns[8].Width = 100;
-            this.metroGridVisualizacaoRegistros.Columns[9].Width = 155;
-            this.metroGridVisualizacaoRegistros.Columns[12].Width = 95;
+            this.metroGridVisualizacaoRegistros.Columns[9].Width = 100;
+            this.metroGridVisualizacaoRegistros.Columns[12].Width = 155;
+            this.metroGridVisualizacaoRegistros.Columns[15].Width = 105;
 
             this.metroGridVisualizacaoRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 
             this.metroGridVisualizacaoRegistros.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.metroGridVisualizacaoRegistros.Columns[2].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
-
 
             this.metroGridVisualizacaoRegistros.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.metroGridVisualizacaoRegistros.Columns[3].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -208,27 +208,30 @@ namespace MeNutri_Registros.Views
             this.metroGridVisualizacaoRegistros.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.metroGridVisualizacaoRegistros.Columns[5].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
 
-            this.metroGridVisualizacaoRegistros.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.metroGridVisualizacaoRegistros.Columns[8].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
-
             this.metroGridVisualizacaoRegistros.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.metroGridVisualizacaoRegistros.Columns[9].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
 
             this.metroGridVisualizacaoRegistros.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.metroGridVisualizacaoRegistros.Columns[12].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
 
+            this.metroGridVisualizacaoRegistros.Columns[15].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.metroGridVisualizacaoRegistros.Columns[15].HeaderCell.Style.Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Bold, GraphicsUnit.Pixel);
+
             this.metroGridVisualizacaoRegistros.Columns[0].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[1].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[6].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[7].Visible = false;
+            this.metroGridVisualizacaoRegistros.Columns[8].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[10].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[11].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[13].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[14].Visible = false;
-            this.metroGridVisualizacaoRegistros.Columns[15].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[16].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[17].Visible = false;
             this.metroGridVisualizacaoRegistros.Columns[18].Visible = false;
+            this.metroGridVisualizacaoRegistros.Columns[19].Visible = false;
+            this.metroGridVisualizacaoRegistros.Columns[20].Visible = false;
+            this.metroGridVisualizacaoRegistros.Columns[21].Visible = false;
         }
 
         private void metroButtonResetarFiltrosEGrid_Click(object sender, EventArgs e)
@@ -292,9 +295,11 @@ namespace MeNutri_Registros.Views
 
             sfd.FileName = "MeNutri_TabelaRegistros_" + dataAtual;
 
+            string nomeDaPlanilha = "MeNutri Registros - " + DateTime.Now.ToString("dd-MM-yy");
+
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                mensagem = exportadorXlsPdf.exportarTabelaParaArquivo(listaAtual, isExcel, sfd.FileName, headersDoGrid());
+                mensagem = exportadorXlsPdf.exportarTabelaParaArquivo(listaAtual, isExcel, sfd.FileName, headersDoGrid(), nomeDaPlanilha);
 
                 if (mensagem.Sucesso)
                 {
@@ -327,9 +332,12 @@ namespace MeNutri_Registros.Views
             listaHeaders.Add("Nome");
             listaHeaders.Add("Sobrenome");
             listaHeaders.Add("Razão Social");
+            listaHeaders.Add("Cargo e Diretoria");
             listaHeaders.Add("CPF");
             listaHeaders.Add("RG");
             listaHeaders.Add("Telefone");
+            listaHeaders.Add("Instagram");
+            listaHeaders.Add("Whatsapp");
             listaHeaders.Add("E-mail");
             listaHeaders.Add("CNPJ");
             listaHeaders.Add("CEP");
@@ -349,6 +357,21 @@ namespace MeNutri_Registros.Views
             this.metroGridVisualizacaoRegistros.Visible = false;
             MetroMessageBox.Show(this, mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             this.metroGridVisualizacaoRegistros.Visible = true;
+        }
+
+        public void controlaDisponibilidadeControles()
+        {
+            if (!Globals.isAdminGeral())
+                this.metroButtonExcluirRegistro.Enabled = true;
+
+            if (Globals.isAdminComum() || Globals.isAdminGeral())
+                this.metroButtonEditarRegistro.Enabled = true;
+
+            this.metroButtonPesquisarRegistros.Enabled = true;
+            this.metroButtonVisualizarRegistro.Enabled = true;
+            this.metroButtonFiltrarGrid.Enabled = true;
+            pictureBoxExportarExcel.Enabled = true;
+            pictureBoxExportarPDF.Enabled = true;
         }
     }
 }

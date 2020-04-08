@@ -15,7 +15,7 @@ namespace MeNutri_Registros
     {
         public ExportadorXlsPdf() { }
 
-        public MensagemModel exportarTabelaParaArquivo(List<T> listaGenerica, bool isExcel, string pathArquivo, List<string> headersDoGrid)
+        public MensagemModel exportarTabelaParaArquivo(List<T> listaGenerica, bool isExcel, string pathArquivo, List<string> headersDoGrid, string nomeDaPlanilha)
         {
             MensagemModel mensagem;
 
@@ -30,7 +30,7 @@ namespace MeNutri_Registros
                 Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                 // O limite para o nome de uma planilha é de 31 caracteres, essa linha atende à esta regra e a nomeia
-                xlWorkSheet.Name = "MeNutri Registros - " + DateTime.Now.ToString("dd-MM-yy");
+                xlWorkSheet.Name = nomeDaPlanilha.Length < 30 ? nomeDaPlanilha : "Planilha de registros";
 
                 char auxColunasHeader = '@';
                 for (int i = 0 ; i < headersDoGrid.Count; i++)
@@ -52,6 +52,11 @@ namespace MeNutri_Registros
                             continue;
 
                         string valor = prop.GetValue(obj, null).ToString();
+
+                        if (prop.PropertyType.IsEnum)
+                        {
+                            valor = UtilityClass.substituiCaracteresEspeciaisPorEspaco(valor);
+                        }
 
                         xlWorkSheet.Cells[countLinha, countColuna] = "'" + valor; // o ' serve para todos campos serem tratados como string
 
