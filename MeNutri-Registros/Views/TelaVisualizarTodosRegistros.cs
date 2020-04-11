@@ -63,9 +63,17 @@ namespace MeNutri_Registros.Views
                 resetaFiltros();
                 RegistroController registroController = new RegistroController();
                 this.listaRegistros = registroController.getAllRegistros();
-                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioUltimaEdicao).ToList();
-                listaAtual = listaRegistrosOrdenada;
-                this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
+                if (this.listaRegistros != null)
+                {
+                    this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioUltimaEdicao).ToList();
+                    listaAtual = listaRegistrosOrdenada;
+                    this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
+                }
+                else
+                {
+                    mostraMensagemEscondeGrid("Não existem registros para preencher a tabela", "Tabela vazia");
+                    this.Close();
+                }
             }
         }
 
