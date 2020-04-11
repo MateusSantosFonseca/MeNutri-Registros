@@ -55,7 +55,7 @@ namespace MeNutri_Registros.Views
                     Bairro = !string.IsNullOrWhiteSpace(this.metroTextBoxBairro.Text) ? this.metroTextBoxBairro.Text : "vazio",
                     Complemento = !string.IsNullOrWhiteSpace(this.metroTextBoxComplemento.Text) ? this.metroTextBoxComplemento.Text : "vazio",
                     Outros = !string.IsNullOrWhiteSpace(this.metroTextBoxOutros.Text) ? this.metroTextBoxOutros.Text : "vazio",
-                    HorarioCadastroRegistro = DateTime.Now
+                    HorarioUltimaEdicao = DateTime.Now
                 };
 
                 if (this.metroRadioButtonCliente.Checked)

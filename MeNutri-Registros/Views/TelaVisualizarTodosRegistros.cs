@@ -39,7 +39,7 @@ namespace MeNutri_Registros.Views
 
                 ajustaHorariosDatetimes();
 
-                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioUltimaEdicao).ToList();
                 listaAtual = listaRegistrosOrdenada;
                 this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
 
@@ -63,7 +63,7 @@ namespace MeNutri_Registros.Views
                 resetaFiltros();
                 RegistroController registroController = new RegistroController();
                 this.listaRegistros = registroController.getAllRegistros();
-                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                this.listaRegistrosOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioUltimaEdicao).ToList();
                 listaAtual = listaRegistrosOrdenada;
                 this.metroGridVisualizacaoRegistros.DataSource = listaRegistrosOrdenada;
             }
@@ -77,8 +77,8 @@ namespace MeNutri_Registros.Views
             dataTerminoPeriodo = new DateTime(dataTerminoPeriodo.Year, dataTerminoPeriodo.Month, dataTerminoPeriodo.Day, 23, 59, 59);
 
             List<RegistroModel> listaRegistrosFiltradosDatetime = (from registro in listaRegistros
-                                                                   where registro.HorarioCadastroRegistro >= dataInicioPeriodo
-                                                                         && registro.HorarioCadastroRegistro <= dataTerminoPeriodo
+                                                                   where registro.HorarioUltimaEdicao >= dataInicioPeriodo
+                                                                         && registro.HorarioUltimaEdicao <= dataTerminoPeriodo
                                                                    select registro).ToList();
             listaRegistros = listaRegistrosFiltradosDatetime;
             listaAtual = listaRegistrosFiltradosDatetime;
@@ -114,7 +114,7 @@ namespace MeNutri_Registros.Views
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
                 default:
-                    listaOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioCadastroRegistro).ToList();
+                    listaOrdenada = listaRegistros.OrderByDescending(registro => registro.HorarioUltimaEdicao).ToList();
                     listaAtual = listaOrdenada;
                     this.metroGridVisualizacaoRegistros.DataSource = listaOrdenada;
                     break;
@@ -327,7 +327,7 @@ namespace MeNutri_Registros.Views
         public List<string> headersDoGrid()
         {
             List<string> listaHeaders = new List<string>();
-            listaHeaders.Add("Horário de cadastro");
+            listaHeaders.Add("Horário da última edição");
             listaHeaders.Add("Tipo de registro");
             listaHeaders.Add("Nome");
             listaHeaders.Add("Sobrenome");
@@ -381,12 +381,14 @@ namespace MeNutri_Registros.Views
         {
             RegistroModel registroSelecionado = this.metroGridVisualizacaoRegistros.SelectedRows[0].DataBoundItem as RegistroModel;
             TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(true, registroSelecionado);
-            telaEditarVisualizarRegistro.Show();
+            telaEditarVisualizarRegistro.ShowDialog();
+            atualizaGrid(null, true);
         }
 
         private void metroButtonVisualizarRegistro_Click(object sender, EventArgs e)
         {
-            TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(false);
+            RegistroModel registroSelecionado = this.metroGridVisualizacaoRegistros.SelectedRows[0].DataBoundItem as RegistroModel;
+            TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(false, registroSelecionado);
             telaEditarVisualizarRegistro.Show();
         }
     }

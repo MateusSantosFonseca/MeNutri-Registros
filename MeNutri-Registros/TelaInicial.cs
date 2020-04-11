@@ -24,6 +24,7 @@ namespace MeNutri_Registros
             this.Icon = Properties.Resources.Menutrinho_Icon;
             this.MaximizeBox = false;
             this.Resizable = false;
+            this.metroLabelCreatedBy.Text = "© Mateus Fonseca - " + DateTime.Now.ToString("yyyy");
 
             if (Globals.isAdminComum() || Globals.isAdminGeral())
                 this.pictureBoxAdicionarRegistro.Visible = true;

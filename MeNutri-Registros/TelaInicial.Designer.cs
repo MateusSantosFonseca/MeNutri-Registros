@@ -31,6 +31,7 @@
             this.pictureBoxLogoMenutriPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBoxAdicionarRegistro = new System.Windows.Forms.PictureBox();
             this.pictureBoxBuscarRegistros = new System.Windows.Forms.PictureBox();
+            this.metroLabelCreatedBy = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).BeginInit();
@@ -40,7 +41,7 @@
             // 
             this.pictureBoxLogoMenutriPrincipal.BackgroundImage = global::MeNutri_Registros.Properties.Resources.MeNutri_Logo_SemFundo;
             this.pictureBoxLogoMenutriPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(188, 119);
+            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(180, 109);
             this.pictureBoxLogoMenutriPrincipal.Name = "pictureBoxLogoMenutriPrincipal";
             this.pictureBoxLogoMenutriPrincipal.Size = new System.Drawing.Size(370, 236);
             this.pictureBoxLogoMenutriPrincipal.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             this.pictureBoxAdicionarRegistro.BackgroundImage = global::MeNutri_Registros.Properties.Resources.BotaoAdicionar;
             this.pictureBoxAdicionarRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxAdicionarRegistro.Location = new System.Drawing.Point(23, 40);
+            this.pictureBoxAdicionarRegistro.Location = new System.Drawing.Point(23, 109);
             this.pictureBoxAdicionarRegistro.Name = "pictureBoxAdicionarRegistro";
             this.pictureBoxAdicionarRegistro.Size = new System.Drawing.Size(60, 50);
             this.pictureBoxAdicionarRegistro.TabIndex = 1;
@@ -63,7 +64,7 @@
             // 
             this.pictureBoxBuscarRegistros.BackgroundImage = global::MeNutri_Registros.Properties.Resources.LupaVerde;
             this.pictureBoxBuscarRegistros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBuscarRegistros.Location = new System.Drawing.Point(23, 137);
+            this.pictureBoxBuscarRegistros.Location = new System.Drawing.Point(23, 29);
             this.pictureBoxBuscarRegistros.Name = "pictureBoxBuscarRegistros";
             this.pictureBoxBuscarRegistros.Size = new System.Drawing.Size(60, 50);
             this.pictureBoxBuscarRegistros.TabIndex = 2;
@@ -71,11 +72,23 @@
             this.pictureBoxBuscarRegistros.Click += new System.EventHandler(this.pictureBoxBuscarRegistros_Click);
             this.pictureBoxBuscarRegistros.MouseEnter += new System.EventHandler(this.pictureBoxBuscarRegistros_MouseEnter);
             // 
+            // metroLabelCreatedBy
+            // 
+            this.metroLabelCreatedBy.AutoSize = true;
+            this.metroLabelCreatedBy.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabelCreatedBy.Location = new System.Drawing.Point(531, 391);
+            this.metroLabelCreatedBy.Name = "metroLabelCreatedBy";
+            this.metroLabelCreatedBy.Size = new System.Drawing.Size(0, 0);
+            this.metroLabelCreatedBy.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroLabelCreatedBy.TabIndex = 3;
+            this.metroLabelCreatedBy.UseStyleColors = true;
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 430);
+            this.Controls.Add(this.metroLabelCreatedBy);
             this.Controls.Add(this.pictureBoxBuscarRegistros);
             this.Controls.Add(this.pictureBoxAdicionarRegistro);
             this.Controls.Add(this.pictureBoxLogoMenutriPrincipal);
@@ -85,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,5 +107,6 @@
         private System.Windows.Forms.PictureBox pictureBoxLogoMenutriPrincipal;
         private System.Windows.Forms.PictureBox pictureBoxAdicionarRegistro;
         private System.Windows.Forms.PictureBox pictureBoxBuscarRegistros;
+        private MetroFramework.Controls.MetroLabel metroLabelCreatedBy;
     }
 }
