@@ -391,5 +391,26 @@ namespace MeNutri_Registros.Views
             TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(false, registroSelecionado);
             telaEditarVisualizarRegistro.Show();
         }
+
+        private void metroButtonExcluirRegistro_Click(object sender, EventArgs e)
+        {
+            RegistroModel registroSelecionado = this.metroGridVisualizacaoRegistros.SelectedRows[0].DataBoundItem as RegistroModel;
+            DialogResult resultadoPergunta = MessageBox.Show($"Você confirma que deseja excluir o registro de nome " +
+                            $" {registroSelecionado.Nome}? Após a confirmação, a exclusão não poderá ser revertida.",
+                            "Confirmação de exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(resultadoPergunta == DialogResult.Yes)
+            {
+                RegistroController registroController = new RegistroController();
+                registroController.deleteRegistro(registroSelecionado.Guid);
+                atualizaGrid(null, true);
+            }
+            else
+            {
+                MessageBox.Show($"Você confirma que deseja excluir o registro de nome " +
+                            $" {registroSelecionado.Nome}? Após a confirmação, a exclusão não poderá ser revertida.",
+                            "Confirmação de exclusão de registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

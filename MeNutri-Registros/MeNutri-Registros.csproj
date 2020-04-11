@@ -238,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\BotaoAdicionar.png" />
+    <None Include="Resources\LixeiraVerde.png" />
     <Content Include="Resources\LupaVerde.png" />
     <Content Include="Resources\MeNutri-Logo-SemFundo.png" />
     <Content Include="Resources\Menutrinho_Icon.ico" />

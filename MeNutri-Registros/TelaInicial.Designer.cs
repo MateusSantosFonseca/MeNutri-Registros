@@ -32,9 +32,11 @@
             this.pictureBoxAdicionarRegistro = new System.Windows.Forms.PictureBox();
             this.pictureBoxBuscarRegistros = new System.Windows.Forms.PictureBox();
             this.metroLabelCreatedBy = new MetroFramework.Controls.MetroLabel();
+            this.pictureBoxDeletarTodosRegistros = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeletarTodosRegistros)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxLogoMenutriPrincipal
@@ -83,11 +85,26 @@
             this.metroLabelCreatedBy.TabIndex = 3;
             this.metroLabelCreatedBy.UseStyleColors = true;
             // 
+            // pictureBoxDeletarTodosRegistros
+            // 
+            this.pictureBoxDeletarTodosRegistros.BackgroundImage = global::MeNutri_Registros.Properties.Resources.LixeiraVerde;
+            this.pictureBoxDeletarTodosRegistros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDeletarTodosRegistros.Enabled = false;
+            this.pictureBoxDeletarTodosRegistros.Location = new System.Drawing.Point(23, 357);
+            this.pictureBoxDeletarTodosRegistros.Name = "pictureBoxDeletarTodosRegistros";
+            this.pictureBoxDeletarTodosRegistros.Size = new System.Drawing.Size(60, 50);
+            this.pictureBoxDeletarTodosRegistros.TabIndex = 4;
+            this.pictureBoxDeletarTodosRegistros.TabStop = false;
+            this.pictureBoxDeletarTodosRegistros.Visible = false;
+            this.pictureBoxDeletarTodosRegistros.Click += new System.EventHandler(this.pictureBoxDeletarTodosRegistros_Click);
+            this.pictureBoxDeletarTodosRegistros.MouseEnter += new System.EventHandler(this.pictureBoxDeletarTodosRegistros_MouseEnter);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 430);
+            this.Controls.Add(this.pictureBoxDeletarTodosRegistros);
             this.Controls.Add(this.metroLabelCreatedBy);
             this.Controls.Add(this.pictureBoxBuscarRegistros);
             this.Controls.Add(this.pictureBoxAdicionarRegistro);
@@ -97,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeletarTodosRegistros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +126,6 @@
         private System.Windows.Forms.PictureBox pictureBoxAdicionarRegistro;
         private System.Windows.Forms.PictureBox pictureBoxBuscarRegistros;
         private MetroFramework.Controls.MetroLabel metroLabelCreatedBy;
+        private System.Windows.Forms.PictureBox pictureBoxDeletarTodosRegistros;
     }
 }

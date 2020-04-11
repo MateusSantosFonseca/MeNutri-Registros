@@ -26,6 +26,12 @@ namespace MeNutri_Registros
             this.Resizable = false;
             this.metroLabelCreatedBy.Text = "© Mateus Fonseca - " + DateTime.Now.ToString("yyyy");
 
+            if (Globals.isAdminGeral())
+            {
+                this.pictureBoxDeletarTodosRegistros.Visible = true;
+                this.pictureBoxDeletarTodosRegistros.Enabled = true;
+            }
+
             if (Globals.isAdminComum() || Globals.isAdminGeral())
                 this.pictureBoxAdicionarRegistro.Visible = true;
 
@@ -64,9 +70,35 @@ namespace MeNutri_Registros
             this.pictureBoxBuscarRegistros.Cursor = Cursors.Hand;
         }
 
+        private void pictureBoxDeletarTodosRegistros_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBoxDeletarTodosRegistros.Cursor = Cursors.Hand;
+        }
+
         private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBoxDeletarTodosRegistros_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this, "Esta funcionalidade está desabilitada, para utilizá-la, contacte o " +
+                                "desenvolvedor do sistema.", "Funcionalidade desabilitada", MessageBoxButtons.OK, MessageBoxIcon.Warning, 243);
+
+            //DialogResult resultadoPergunta = MessageBox.Show("Você confirma que deseja deletar todos os registros do sistema? " +
+            //                "Atenção, estas deleções não poderão ser revertidas, os dados serão perdidos.",
+            //                "Confirmação de exclusão de TODOS os registros", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            //if (resultadoPergunta == DialogResult.Yes)
+            //{
+            //    MessageBox.Show("Todos os registros foram deletados, o banco de dados foi resetado.", "Todos registros deletados", MessageBoxButtons.OK);
+            //    RegistroController registroController = new RegistroController();
+            //    registroController.deleteTodosRegistros();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("A deleção de todos registros foi cancelada, nenhum registro foi excluído.", "Exclusão de registros cancelada", MessageBoxButtons.OK);
+            //}
         }
     }
 }

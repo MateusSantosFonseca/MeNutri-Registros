@@ -86,6 +86,22 @@ namespace MeNutri_Registros.Controllers
             }
         }
 
+        public void deleteTodosRegistros()
+        {
+            try
+            {
+                FirebaseResponse response = client.Delete(PATH_FIREBASE);
+                MessageBox.Show("Todos os registros foram excluídos com sucesso.", "Exclusão concluída", MessageBoxButtons.OK);
+            }
+            catch (Exception e)
+            {
+                MensagemModel mensagem = new MensagemModel("Erro ao excluir todos os registros", "Não foi possível excluir todos os registros, possivelmente devido à problemas de conexão com a internet, tente novamente mais tarde.");
+                LogModel log = new LogModel(mensagem.Titulo, e.Message, e.StackTrace, DateTime.Now);
+                LogController.logarErro(log);
+                MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
+            }
+        }
+
         public RegistroModel getRegistro(Guid guid)
         {
             try
