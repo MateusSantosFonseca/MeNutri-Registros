@@ -21,6 +21,8 @@ namespace MeNutri_Registros.Views
             this.Icon = Properties.Resources.Menutrinho_Icon;
             this.MaximizeBox = false;
             this.Resizable = false;
+            this.ActiveControl = this.metroTextBoxUser;
+            this.metroTextBoxUser.Select();
         }
 
         private void checkEnterPressed(object sender, KeyPressEventArgs e)
@@ -55,7 +57,7 @@ namespace MeNutri_Registros.Views
                 MessageBox.Show("Senha ou usuários incorretos, por favor, tente novamente.", "Login falhou", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.metroTextBoxUser.Text = "";
                 this.metroTextBoxSenha.Text = "";
-                this.metroTextBoxUser.Focus();
+                this.ActiveControl = this.metroTextBoxUser;
             }
         }
     }

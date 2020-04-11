@@ -7,7 +7,7 @@
     <ProjectGuid>{2520DAF9-B965-43ED-8828-BCCA1AA9F663}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MeNutri_Registros</RootNamespace>
-    <AssemblyName>MeNutri-Registros</AssemblyName>
+    <AssemblyName>MeNutri_Registros</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,9 +23,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ProductName>MeNutri</ProductName>
+    <PublisherName>Mateus Fonseca</PublisherName>
+    <SuiteName>Mateus Fonseca</SuiteName>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.0.9</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -49,16 +53,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3804AF3941582F6CF346554B9645D45939212CBA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7F79AC4949FEF33145ADD714381781A2EB335D09</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MeNutri-Registros_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MeNutri-Registros_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Menutrinho_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -209,6 +216,7 @@
     <EmbeddedResource Include="Views\TelaVisualizarTodosRegistros.resx">
       <DependentUpon>TelaVisualizarTodosRegistros.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MeNutri-Registros_1_TemporaryKey.pfx" />
     <None Include="MeNutri-Registros_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,6 +245,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Menutrinho_Icon.ico" />
     <Content Include="Resources\BotaoAdicionar.png" />
     <None Include="Resources\LixeiraVerde.png" />
     <Content Include="Resources\LupaVerde.png" />

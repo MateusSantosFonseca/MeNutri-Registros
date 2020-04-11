@@ -415,9 +415,8 @@ namespace MeNutri_Registros.Views
             }
             else
             {
-                MessageBox.Show($"Você confirma que deseja excluir o registro de nome " +
-                            $" {registroSelecionado.Nome}? Após a confirmação, a exclusão não poderá ser revertida.",
-                            "Confirmação de exclusão de registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"O registro de nome {registroSelecionado.Nome} foi excluído com sucesso",
+                                 "Exclusão de registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
