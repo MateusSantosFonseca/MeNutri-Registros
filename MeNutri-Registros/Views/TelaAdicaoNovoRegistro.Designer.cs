@@ -74,9 +74,11 @@
             this.metroRadioButtonFuncionario = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButtonPotencialCliente = new MetroFramework.Controls.MetroRadioButton();
             this.metroLabelTipoDeRegistro = new MetroFramework.Controls.MetroLabel();
+            this.pictureBoxMenutrinho = new System.Windows.Forms.PictureBox();
             this.metroPanelAdicionarRegistros.SuspendLayout();
             this.metroPanelEstiloEstados.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenutrinho)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanelAdicionarRegistros
@@ -126,6 +128,8 @@
             this.metroPanelAdicionarRegistros.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanelAdicionarRegistros.HorizontalScrollbarSize = 10;
             this.metroPanelAdicionarRegistros.Location = new System.Drawing.Point(10, 106);
+            this.metroPanelAdicionarRegistros.MaximumSize = new System.Drawing.Size(775, 375);
+            this.metroPanelAdicionarRegistros.MinimumSize = new System.Drawing.Size(775, 375);
             this.metroPanelAdicionarRegistros.Name = "metroPanelAdicionarRegistros";
             this.metroPanelAdicionarRegistros.Size = new System.Drawing.Size(775, 375);
             this.metroPanelAdicionarRegistros.Style = MetroFramework.MetroColorStyle.Lime;
@@ -977,9 +981,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(646, 33);
+            this.metroPanel1.Location = new System.Drawing.Point(143, 59);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(118, 67);
+            this.metroPanel1.Size = new System.Drawing.Size(294, 46);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -988,7 +992,7 @@
             // metroRadioButtonCliente
             // 
             this.metroRadioButtonCliente.AutoSize = true;
-            this.metroRadioButtonCliente.Location = new System.Drawing.Point(3, 5);
+            this.metroRadioButtonCliente.Location = new System.Drawing.Point(3, 26);
             this.metroRadioButtonCliente.Name = "metroRadioButtonCliente";
             this.metroRadioButtonCliente.Size = new System.Drawing.Size(60, 15);
             this.metroRadioButtonCliente.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1000,7 +1004,7 @@
             // metroRadioButtonFuncionario
             // 
             this.metroRadioButtonFuncionario.AutoSize = true;
-            this.metroRadioButtonFuncionario.Location = new System.Drawing.Point(3, 47);
+            this.metroRadioButtonFuncionario.Location = new System.Drawing.Point(198, 26);
             this.metroRadioButtonFuncionario.Name = "metroRadioButtonFuncionario";
             this.metroRadioButtonFuncionario.Size = new System.Drawing.Size(86, 15);
             this.metroRadioButtonFuncionario.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1013,7 +1017,7 @@
             // metroRadioButtonPotencialCliente
             // 
             this.metroRadioButtonPotencialCliente.AutoSize = true;
-            this.metroRadioButtonPotencialCliente.Location = new System.Drawing.Point(3, 26);
+            this.metroRadioButtonPotencialCliente.Location = new System.Drawing.Point(76, 26);
             this.metroRadioButtonPotencialCliente.Name = "metroRadioButtonPotencialCliente";
             this.metroRadioButtonPotencialCliente.Size = new System.Drawing.Size(110, 15);
             this.metroRadioButtonPotencialCliente.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1027,17 +1031,28 @@
             // 
             this.metroLabelTipoDeRegistro.AutoSize = true;
             this.metroLabelTipoDeRegistro.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabelTipoDeRegistro.Location = new System.Drawing.Point(535, 38);
+            this.metroLabelTipoDeRegistro.Location = new System.Drawing.Point(29, 81);
             this.metroLabelTipoDeRegistro.Name = "metroLabelTipoDeRegistro";
             this.metroLabelTipoDeRegistro.Size = new System.Drawing.Size(108, 19);
             this.metroLabelTipoDeRegistro.TabIndex = 2;
             this.metroLabelTipoDeRegistro.Text = "Tipo de registro:";
+            // 
+            // pictureBoxMenutrinho
+            // 
+            this.pictureBoxMenutrinho.BackgroundImage = global::MeNutri_Registros.Properties.Resources.Menutrinho_Imagem;
+            this.pictureBoxMenutrinho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMenutrinho.Location = new System.Drawing.Point(665, 29);
+            this.pictureBoxMenutrinho.Name = "pictureBoxMenutrinho";
+            this.pictureBoxMenutrinho.Size = new System.Drawing.Size(99, 89);
+            this.pictureBoxMenutrinho.TabIndex = 3;
+            this.pictureBoxMenutrinho.TabStop = false;
             // 
             // TelaAdicaoNovoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 496);
+            this.Controls.Add(this.pictureBoxMenutrinho);
             this.Controls.Add(this.metroLabelTipoDeRegistro);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanelAdicionarRegistros);
@@ -1049,6 +1064,7 @@
             this.metroPanelEstiloEstados.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenutrinho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1102,5 +1118,6 @@
         private MetroFramework.Controls.MetroLabel metroLabelInstagram;
         private MetroFramework.Controls.MetroLabel metroLabelCargoEDiretoria;
         private MetroFramework.Controls.MetroTextBox metroTextBoxCargoEDiretoria;
+        private System.Windows.Forms.PictureBox pictureBoxMenutrinho;
     }
 }

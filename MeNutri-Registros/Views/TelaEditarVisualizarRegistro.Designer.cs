@@ -80,7 +80,7 @@
             // metroLabelTipoRegistro
             // 
             this.metroLabelTipoRegistro.AutoSize = true;
-            this.metroLabelTipoRegistro.Location = new System.Drawing.Point(48, 81);
+            this.metroLabelTipoRegistro.Location = new System.Drawing.Point(221, 79);
             this.metroLabelTipoRegistro.Name = "metroLabelTipoRegistro";
             this.metroLabelTipoRegistro.Size = new System.Drawing.Size(109, 19);
             this.metroLabelTipoRegistro.TabIndex = 0;
@@ -89,7 +89,7 @@
             // metroLabelNome
             // 
             this.metroLabelNome.AutoSize = true;
-            this.metroLabelNome.Location = new System.Drawing.Point(42, 125);
+            this.metroLabelNome.Location = new System.Drawing.Point(39, 129);
             this.metroLabelNome.Name = "metroLabelNome";
             this.metroLabelNome.Size = new System.Drawing.Size(49, 19);
             this.metroLabelNome.TabIndex = 1;
@@ -98,7 +98,7 @@
             // metroLabelSobrenome
             // 
             this.metroLabelSobrenome.AutoSize = true;
-            this.metroLabelSobrenome.Location = new System.Drawing.Point(42, 169);
+            this.metroLabelSobrenome.Location = new System.Drawing.Point(39, 173);
             this.metroLabelSobrenome.Name = "metroLabelSobrenome";
             this.metroLabelSobrenome.Size = new System.Drawing.Size(81, 19);
             this.metroLabelSobrenome.TabIndex = 2;
@@ -107,7 +107,7 @@
             // metroLabelRazaoSocial
             // 
             this.metroLabelRazaoSocial.AutoSize = true;
-            this.metroLabelRazaoSocial.Location = new System.Drawing.Point(42, 211);
+            this.metroLabelRazaoSocial.Location = new System.Drawing.Point(39, 215);
             this.metroLabelRazaoSocial.Name = "metroLabelRazaoSocial";
             this.metroLabelRazaoSocial.Size = new System.Drawing.Size(86, 19);
             this.metroLabelRazaoSocial.TabIndex = 3;
@@ -116,7 +116,7 @@
             // metroLabelCNPJ
             // 
             this.metroLabelCNPJ.AutoSize = true;
-            this.metroLabelCNPJ.Location = new System.Drawing.Point(42, 252);
+            this.metroLabelCNPJ.Location = new System.Drawing.Point(39, 256);
             this.metroLabelCNPJ.Name = "metroLabelCNPJ";
             this.metroLabelCNPJ.Size = new System.Drawing.Size(43, 19);
             this.metroLabelCNPJ.TabIndex = 4;
@@ -125,7 +125,7 @@
             // metroLabelCargoDiretoria
             // 
             this.metroLabelCargoDiretoria.AutoSize = true;
-            this.metroLabelCargoDiretoria.Location = new System.Drawing.Point(42, 292);
+            this.metroLabelCargoDiretoria.Location = new System.Drawing.Point(39, 296);
             this.metroLabelCargoDiretoria.Name = "metroLabelCargoDiretoria";
             this.metroLabelCargoDiretoria.Size = new System.Drawing.Size(115, 19);
             this.metroLabelCargoDiretoria.TabIndex = 5;
@@ -134,7 +134,7 @@
             // metroLabelTelefone
             // 
             this.metroLabelTelefone.AutoSize = true;
-            this.metroLabelTelefone.Location = new System.Drawing.Point(42, 337);
+            this.metroLabelTelefone.Location = new System.Drawing.Point(39, 341);
             this.metroLabelTelefone.Name = "metroLabelTelefone";
             this.metroLabelTelefone.Size = new System.Drawing.Size(60, 19);
             this.metroLabelTelefone.TabIndex = 6;
@@ -143,7 +143,7 @@
             // metroLabelCPF
             // 
             this.metroLabelCPF.AutoSize = true;
-            this.metroLabelCPF.Location = new System.Drawing.Point(42, 380);
+            this.metroLabelCPF.Location = new System.Drawing.Point(39, 384);
             this.metroLabelCPF.Name = "metroLabelCPF";
             this.metroLabelCPF.Size = new System.Drawing.Size(36, 19);
             this.metroLabelCPF.TabIndex = 7;
@@ -152,7 +152,7 @@
             // metroLabelRG
             // 
             this.metroLabelRG.AutoSize = true;
-            this.metroLabelRG.Location = new System.Drawing.Point(42, 422);
+            this.metroLabelRG.Location = new System.Drawing.Point(39, 426);
             this.metroLabelRG.Name = "metroLabelRG";
             this.metroLabelRG.Size = new System.Drawing.Size(29, 19);
             this.metroLabelRG.TabIndex = 8;
@@ -161,7 +161,7 @@
             // metroLabelEmail
             // 
             this.metroLabelEmail.AutoSize = true;
-            this.metroLabelEmail.Location = new System.Drawing.Point(42, 462);
+            this.metroLabelEmail.Location = new System.Drawing.Point(39, 466);
             this.metroLabelEmail.Name = "metroLabelEmail";
             this.metroLabelEmail.Size = new System.Drawing.Size(50, 19);
             this.metroLabelEmail.TabIndex = 9;
@@ -170,7 +170,7 @@
             // metroLabelInstagram
             // 
             this.metroLabelInstagram.AutoSize = true;
-            this.metroLabelInstagram.Location = new System.Drawing.Point(42, 506);
+            this.metroLabelInstagram.Location = new System.Drawing.Point(562, 129);
             this.metroLabelInstagram.Name = "metroLabelInstagram";
             this.metroLabelInstagram.Size = new System.Drawing.Size(70, 19);
             this.metroLabelInstagram.TabIndex = 10;
@@ -179,7 +179,7 @@
             // metroLabelWhatsApp
             // 
             this.metroLabelWhatsApp.AutoSize = true;
-            this.metroLabelWhatsApp.Location = new System.Drawing.Point(42, 554);
+            this.metroLabelWhatsApp.Location = new System.Drawing.Point(562, 173);
             this.metroLabelWhatsApp.Name = "metroLabelWhatsApp";
             this.metroLabelWhatsApp.Size = new System.Drawing.Size(73, 19);
             this.metroLabelWhatsApp.TabIndex = 11;
@@ -188,7 +188,7 @@
             // metroLabelCEP
             // 
             this.metroLabelCEP.AutoSize = true;
-            this.metroLabelCEP.Location = new System.Drawing.Point(42, 595);
+            this.metroLabelCEP.Location = new System.Drawing.Point(565, 215);
             this.metroLabelCEP.Name = "metroLabelCEP";
             this.metroLabelCEP.Size = new System.Drawing.Size(36, 19);
             this.metroLabelCEP.TabIndex = 12;
@@ -197,7 +197,7 @@
             // metroLabelEstado
             // 
             this.metroLabelEstado.AutoSize = true;
-            this.metroLabelEstado.Location = new System.Drawing.Point(41, 635);
+            this.metroLabelEstado.Location = new System.Drawing.Point(564, 256);
             this.metroLabelEstado.Name = "metroLabelEstado";
             this.metroLabelEstado.Size = new System.Drawing.Size(51, 19);
             this.metroLabelEstado.TabIndex = 13;
@@ -206,7 +206,7 @@
             // metroLabelCidade
             // 
             this.metroLabelCidade.AutoSize = true;
-            this.metroLabelCidade.Location = new System.Drawing.Point(41, 674);
+            this.metroLabelCidade.Location = new System.Drawing.Point(565, 296);
             this.metroLabelCidade.Name = "metroLabelCidade";
             this.metroLabelCidade.Size = new System.Drawing.Size(54, 19);
             this.metroLabelCidade.TabIndex = 14;
@@ -215,7 +215,7 @@
             // metroLabelRua
             // 
             this.metroLabelRua.AutoSize = true;
-            this.metroLabelRua.Location = new System.Drawing.Point(42, 714);
+            this.metroLabelRua.Location = new System.Drawing.Point(565, 341);
             this.metroLabelRua.Name = "metroLabelRua";
             this.metroLabelRua.Size = new System.Drawing.Size(34, 19);
             this.metroLabelRua.TabIndex = 15;
@@ -224,7 +224,7 @@
             // metroLabelNumero
             // 
             this.metroLabelNumero.AutoSize = true;
-            this.metroLabelNumero.Location = new System.Drawing.Point(42, 753);
+            this.metroLabelNumero.Location = new System.Drawing.Point(565, 384);
             this.metroLabelNumero.Name = "metroLabelNumero";
             this.metroLabelNumero.Size = new System.Drawing.Size(61, 19);
             this.metroLabelNumero.TabIndex = 16;
@@ -233,7 +233,7 @@
             // metroLabelComplemento
             // 
             this.metroLabelComplemento.AutoSize = true;
-            this.metroLabelComplemento.Location = new System.Drawing.Point(42, 792);
+            this.metroLabelComplemento.Location = new System.Drawing.Point(565, 426);
             this.metroLabelComplemento.Name = "metroLabelComplemento";
             this.metroLabelComplemento.Size = new System.Drawing.Size(97, 19);
             this.metroLabelComplemento.TabIndex = 17;
@@ -242,7 +242,7 @@
             // metroLabelBairro
             // 
             this.metroLabelBairro.AutoSize = true;
-            this.metroLabelBairro.Location = new System.Drawing.Point(42, 831);
+            this.metroLabelBairro.Location = new System.Drawing.Point(565, 466);
             this.metroLabelBairro.Name = "metroLabelBairro";
             this.metroLabelBairro.Size = new System.Drawing.Size(48, 19);
             this.metroLabelBairro.TabIndex = 18;
@@ -251,7 +251,7 @@
             // metroLabelOutros
             // 
             this.metroLabelOutros.AutoSize = true;
-            this.metroLabelOutros.Location = new System.Drawing.Point(42, 872);
+            this.metroLabelOutros.Location = new System.Drawing.Point(36, 531);
             this.metroLabelOutros.Name = "metroLabelOutros";
             this.metroLabelOutros.Size = new System.Drawing.Size(52, 19);
             this.metroLabelOutros.TabIndex = 19;
@@ -260,9 +260,9 @@
             // metroButtonEditarRegistro
             // 
             this.metroButtonEditarRegistro.Enabled = false;
-            this.metroButtonEditarRegistro.Location = new System.Drawing.Point(643, 886);
+            this.metroButtonEditarRegistro.Location = new System.Drawing.Point(811, 519);
             this.metroButtonEditarRegistro.Name = "metroButtonEditarRegistro";
-            this.metroButtonEditarRegistro.Size = new System.Drawing.Size(130, 41);
+            this.metroButtonEditarRegistro.Size = new System.Drawing.Size(130, 37);
             this.metroButtonEditarRegistro.Style = MetroFramework.MetroColorStyle.Green;
             this.metroButtonEditarRegistro.TabIndex = 23;
             this.metroButtonEditarRegistro.Text = "Editar Registro";
@@ -289,7 +289,7 @@
             this.metroTextBoxNome.CustomButton.Visible = false;
             this.metroTextBoxNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxNome.Lines = new string[0];
-            this.metroTextBoxNome.Location = new System.Drawing.Point(214, 125);
+            this.metroTextBoxNome.Location = new System.Drawing.Point(179, 129);
             this.metroTextBoxNome.MaxLength = 30;
             this.metroTextBoxNome.Name = "metroTextBoxNome";
             this.metroTextBoxNome.PasswordChar = '\0';
@@ -326,7 +326,7 @@
             this.metroTextBoxSobrenome.CustomButton.Visible = false;
             this.metroTextBoxSobrenome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxSobrenome.Lines = new string[0];
-            this.metroTextBoxSobrenome.Location = new System.Drawing.Point(214, 169);
+            this.metroTextBoxSobrenome.Location = new System.Drawing.Point(179, 173);
             this.metroTextBoxSobrenome.MaxLength = 80;
             this.metroTextBoxSobrenome.Name = "metroTextBoxSobrenome";
             this.metroTextBoxSobrenome.PasswordChar = '\0';
@@ -363,7 +363,7 @@
             this.metroTextBoxCNPJ.CustomButton.Visible = false;
             this.metroTextBoxCNPJ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxCNPJ.Lines = new string[0];
-            this.metroTextBoxCNPJ.Location = new System.Drawing.Point(214, 252);
+            this.metroTextBoxCNPJ.Location = new System.Drawing.Point(179, 256);
             this.metroTextBoxCNPJ.MaxLength = 25;
             this.metroTextBoxCNPJ.Name = "metroTextBoxCNPJ";
             this.metroTextBoxCNPJ.PasswordChar = '\0';
@@ -400,7 +400,7 @@
             this.metroTextBoxCargoDiretoria.CustomButton.Visible = false;
             this.metroTextBoxCargoDiretoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxCargoDiretoria.Lines = new string[0];
-            this.metroTextBoxCargoDiretoria.Location = new System.Drawing.Point(214, 292);
+            this.metroTextBoxCargoDiretoria.Location = new System.Drawing.Point(179, 296);
             this.metroTextBoxCargoDiretoria.MaxLength = 70;
             this.metroTextBoxCargoDiretoria.Name = "metroTextBoxCargoDiretoria";
             this.metroTextBoxCargoDiretoria.PasswordChar = '\0';
@@ -437,7 +437,7 @@
             this.metroTextBoxRazaoSocial.CustomButton.Visible = false;
             this.metroTextBoxRazaoSocial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxRazaoSocial.Lines = new string[0];
-            this.metroTextBoxRazaoSocial.Location = new System.Drawing.Point(214, 211);
+            this.metroTextBoxRazaoSocial.Location = new System.Drawing.Point(179, 215);
             this.metroTextBoxRazaoSocial.MaxLength = 150;
             this.metroTextBoxRazaoSocial.Name = "metroTextBoxRazaoSocial";
             this.metroTextBoxRazaoSocial.PasswordChar = '\0';
@@ -474,7 +474,7 @@
             this.metroTextBoxTelefone.CustomButton.Visible = false;
             this.metroTextBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxTelefone.Lines = new string[0];
-            this.metroTextBoxTelefone.Location = new System.Drawing.Point(214, 337);
+            this.metroTextBoxTelefone.Location = new System.Drawing.Point(179, 341);
             this.metroTextBoxTelefone.MaxLength = 14;
             this.metroTextBoxTelefone.Name = "metroTextBoxTelefone";
             this.metroTextBoxTelefone.PasswordChar = '\0';
@@ -511,7 +511,7 @@
             this.metroTextBoxCPF.CustomButton.Visible = false;
             this.metroTextBoxCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxCPF.Lines = new string[0];
-            this.metroTextBoxCPF.Location = new System.Drawing.Point(214, 380);
+            this.metroTextBoxCPF.Location = new System.Drawing.Point(179, 384);
             this.metroTextBoxCPF.MaxLength = 20;
             this.metroTextBoxCPF.Name = "metroTextBoxCPF";
             this.metroTextBoxCPF.PasswordChar = '\0';
@@ -548,7 +548,7 @@
             this.metroTextBoxRG.CustomButton.Visible = false;
             this.metroTextBoxRG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxRG.Lines = new string[0];
-            this.metroTextBoxRG.Location = new System.Drawing.Point(214, 422);
+            this.metroTextBoxRG.Location = new System.Drawing.Point(179, 426);
             this.metroTextBoxRG.MaxLength = 20;
             this.metroTextBoxRG.Name = "metroTextBoxRG";
             this.metroTextBoxRG.PasswordChar = '\0';
@@ -585,7 +585,7 @@
             this.metroTextBoxEmail.CustomButton.Visible = false;
             this.metroTextBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxEmail.Lines = new string[0];
-            this.metroTextBoxEmail.Location = new System.Drawing.Point(214, 462);
+            this.metroTextBoxEmail.Location = new System.Drawing.Point(179, 466);
             this.metroTextBoxEmail.MaxLength = 100;
             this.metroTextBoxEmail.Name = "metroTextBoxEmail";
             this.metroTextBoxEmail.PasswordChar = '\0';
@@ -622,7 +622,7 @@
             this.metroTextBoxInstagram.CustomButton.Visible = false;
             this.metroTextBoxInstagram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxInstagram.Lines = new string[0];
-            this.metroTextBoxInstagram.Location = new System.Drawing.Point(214, 506);
+            this.metroTextBoxInstagram.Location = new System.Drawing.Point(688, 129);
             this.metroTextBoxInstagram.MaxLength = 35;
             this.metroTextBoxInstagram.Name = "metroTextBoxInstagram";
             this.metroTextBoxInstagram.PasswordChar = '\0';
@@ -659,7 +659,7 @@
             this.metroTextBoxWhatsapp.CustomButton.Visible = false;
             this.metroTextBoxWhatsapp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxWhatsapp.Lines = new string[0];
-            this.metroTextBoxWhatsapp.Location = new System.Drawing.Point(214, 554);
+            this.metroTextBoxWhatsapp.Location = new System.Drawing.Point(688, 173);
             this.metroTextBoxWhatsapp.MaxLength = 15;
             this.metroTextBoxWhatsapp.Name = "metroTextBoxWhatsapp";
             this.metroTextBoxWhatsapp.PasswordChar = '\0';
@@ -696,7 +696,7 @@
             this.metroTextBoxCEP.CustomButton.Visible = false;
             this.metroTextBoxCEP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxCEP.Lines = new string[0];
-            this.metroTextBoxCEP.Location = new System.Drawing.Point(214, 595);
+            this.metroTextBoxCEP.Location = new System.Drawing.Point(688, 215);
             this.metroTextBoxCEP.MaxLength = 20;
             this.metroTextBoxCEP.Name = "metroTextBoxCEP";
             this.metroTextBoxCEP.PasswordChar = '\0';
@@ -733,7 +733,7 @@
             this.metroTextBoxCidade.CustomButton.Visible = false;
             this.metroTextBoxCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxCidade.Lines = new string[0];
-            this.metroTextBoxCidade.Location = new System.Drawing.Point(214, 674);
+            this.metroTextBoxCidade.Location = new System.Drawing.Point(688, 296);
             this.metroTextBoxCidade.MaxLength = 100;
             this.metroTextBoxCidade.Name = "metroTextBoxCidade";
             this.metroTextBoxCidade.PasswordChar = '\0';
@@ -770,7 +770,7 @@
             this.metroTextBoxRua.CustomButton.Visible = false;
             this.metroTextBoxRua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxRua.Lines = new string[0];
-            this.metroTextBoxRua.Location = new System.Drawing.Point(214, 714);
+            this.metroTextBoxRua.Location = new System.Drawing.Point(688, 341);
             this.metroTextBoxRua.MaxLength = 100;
             this.metroTextBoxRua.Name = "metroTextBoxRua";
             this.metroTextBoxRua.PasswordChar = '\0';
@@ -807,7 +807,7 @@
             this.metroTextBoxNumero.CustomButton.Visible = false;
             this.metroTextBoxNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxNumero.Lines = new string[0];
-            this.metroTextBoxNumero.Location = new System.Drawing.Point(214, 753);
+            this.metroTextBoxNumero.Location = new System.Drawing.Point(688, 384);
             this.metroTextBoxNumero.MaxLength = 15;
             this.metroTextBoxNumero.Name = "metroTextBoxNumero";
             this.metroTextBoxNumero.PasswordChar = '\0';
@@ -844,7 +844,7 @@
             this.metroTextBoxComplemento.CustomButton.Visible = false;
             this.metroTextBoxComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxComplemento.Lines = new string[0];
-            this.metroTextBoxComplemento.Location = new System.Drawing.Point(214, 792);
+            this.metroTextBoxComplemento.Location = new System.Drawing.Point(688, 426);
             this.metroTextBoxComplemento.MaxLength = 150;
             this.metroTextBoxComplemento.Name = "metroTextBoxComplemento";
             this.metroTextBoxComplemento.PasswordChar = '\0';
@@ -881,7 +881,7 @@
             this.metroTextBoxBairro.CustomButton.Visible = false;
             this.metroTextBoxBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxBairro.Lines = new string[0];
-            this.metroTextBoxBairro.Location = new System.Drawing.Point(214, 831);
+            this.metroTextBoxBairro.Location = new System.Drawing.Point(688, 466);
             this.metroTextBoxBairro.MaxLength = 50;
             this.metroTextBoxBairro.Name = "metroTextBoxBairro";
             this.metroTextBoxBairro.PasswordChar = '\0';
@@ -908,7 +908,7 @@
             // 
             // 
             this.metroTextBoxOutros.CustomButton.Image = null;
-            this.metroTextBoxOutros.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.metroTextBoxOutros.CustomButton.Location = new System.Drawing.Point(571, 1);
             this.metroTextBoxOutros.CustomButton.Name = "";
             this.metroTextBoxOutros.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBoxOutros.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -918,7 +918,7 @@
             this.metroTextBoxOutros.CustomButton.Visible = false;
             this.metroTextBoxOutros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroTextBoxOutros.Lines = new string[0];
-            this.metroTextBoxOutros.Location = new System.Drawing.Point(214, 872);
+            this.metroTextBoxOutros.Location = new System.Drawing.Point(95, 531);
             this.metroTextBoxOutros.MaxLength = 300;
             this.metroTextBoxOutros.Name = "metroTextBoxOutros";
             this.metroTextBoxOutros.PasswordChar = '\0';
@@ -928,7 +928,7 @@
             this.metroTextBoxOutros.SelectionLength = 0;
             this.metroTextBoxOutros.SelectionStart = 0;
             this.metroTextBoxOutros.ShortcutsEnabled = true;
-            this.metroTextBoxOutros.Size = new System.Drawing.Size(200, 25);
+            this.metroTextBoxOutros.Size = new System.Drawing.Size(595, 25);
             this.metroTextBoxOutros.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTextBoxOutros.TabIndex = 22;
             this.metroTextBoxOutros.UseCustomBackColor = true;
@@ -977,7 +977,7 @@
             "São Paulo",
             "Sergipe",
             "Tocantins"});
-            this.metroComboBoxEstados.Location = new System.Drawing.Point(11, 8);
+            this.metroComboBoxEstados.Location = new System.Drawing.Point(9, 9);
             this.metroComboBoxEstados.Name = "metroComboBoxEstados";
             this.metroComboBoxEstados.Size = new System.Drawing.Size(200, 25);
             this.metroComboBoxEstados.Style = MetroFramework.MetroColorStyle.Lime;
@@ -993,7 +993,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(203, 627);
+            this.metroPanel1.Location = new System.Drawing.Point(679, 247);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(227, 41);
             this.metroPanel1.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1006,7 +1006,7 @@
             // 
             this.metroRadioButtonCliente.AutoSize = true;
             this.metroRadioButtonCliente.Enabled = false;
-            this.metroRadioButtonCliente.Location = new System.Drawing.Point(214, 84);
+            this.metroRadioButtonCliente.Location = new System.Drawing.Point(360, 83);
             this.metroRadioButtonCliente.Name = "metroRadioButtonCliente";
             this.metroRadioButtonCliente.Size = new System.Drawing.Size(60, 15);
             this.metroRadioButtonCliente.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1019,9 +1019,9 @@
             // 
             this.pictureBoxImagemMenutrinho.BackgroundImage = global::MeNutri_Registros.Properties.Resources.Menutrinho_Imagem;
             this.pictureBoxImagemMenutrinho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxImagemMenutrinho.Location = new System.Drawing.Point(515, 125);
+            this.pictureBoxImagemMenutrinho.Location = new System.Drawing.Point(792, 28);
             this.pictureBoxImagemMenutrinho.Name = "pictureBoxImagemMenutrinho";
-            this.pictureBoxImagemMenutrinho.Size = new System.Drawing.Size(224, 192);
+            this.pictureBoxImagemMenutrinho.Size = new System.Drawing.Size(96, 85);
             this.pictureBoxImagemMenutrinho.TabIndex = 43;
             this.pictureBoxImagemMenutrinho.TabStop = false;
             // 
@@ -1029,7 +1029,7 @@
             // 
             this.metroRadioButtonPotencialCliente.AutoSize = true;
             this.metroRadioButtonPotencialCliente.Enabled = false;
-            this.metroRadioButtonPotencialCliente.Location = new System.Drawing.Point(291, 84);
+            this.metroRadioButtonPotencialCliente.Location = new System.Drawing.Point(435, 83);
             this.metroRadioButtonPotencialCliente.Name = "metroRadioButtonPotencialCliente";
             this.metroRadioButtonPotencialCliente.Size = new System.Drawing.Size(112, 15);
             this.metroRadioButtonPotencialCliente.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1041,7 +1041,7 @@
             // 
             this.metroRadioButtonFuncionario.AutoSize = true;
             this.metroRadioButtonFuncionario.Enabled = false;
-            this.metroRadioButtonFuncionario.Location = new System.Drawing.Point(419, 84);
+            this.metroRadioButtonFuncionario.Location = new System.Drawing.Point(562, 83);
             this.metroRadioButtonFuncionario.Name = "metroRadioButtonFuncionario";
             this.metroRadioButtonFuncionario.Size = new System.Drawing.Size(86, 15);
             this.metroRadioButtonFuncionario.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1055,7 +1055,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(796, 950);
+            this.ClientSize = new System.Drawing.Size(964, 591);
             this.Controls.Add(this.metroRadioButtonFuncionario);
             this.Controls.Add(this.metroRadioButtonPotencialCliente);
             this.Controls.Add(this.pictureBoxImagemMenutrinho);
@@ -1100,6 +1100,8 @@
             this.Controls.Add(this.metroLabelSobrenome);
             this.Controls.Add(this.metroLabelNome);
             this.Controls.Add(this.metroLabelTipoRegistro);
+            this.MaximumSize = new System.Drawing.Size(964, 591);
+            this.MinimumSize = new System.Drawing.Size(964, 591);
             this.Name = "TelaEditarVisualizarRegistro";
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Visualizar Registro";
