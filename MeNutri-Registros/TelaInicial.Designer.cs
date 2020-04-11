@@ -40,7 +40,7 @@
             // 
             this.pictureBoxLogoMenutriPrincipal.BackgroundImage = global::MeNutri_Registros.Properties.Resources.MeNutri_Logo_SemFundo;
             this.pictureBoxLogoMenutriPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(191, 119);
+            this.pictureBoxLogoMenutriPrincipal.Location = new System.Drawing.Point(188, 119);
             this.pictureBoxLogoMenutriPrincipal.Name = "pictureBoxLogoMenutriPrincipal";
             this.pictureBoxLogoMenutriPrincipal.Size = new System.Drawing.Size(370, 236);
             this.pictureBoxLogoMenutriPrincipal.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.pictureBoxBuscarRegistros.BackgroundImage = global::MeNutri_Registros.Properties.Resources.LupaVerde;
             this.pictureBoxBuscarRegistros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBuscarRegistros.Location = new System.Drawing.Point(650, 40);
+            this.pictureBoxBuscarRegistros.Location = new System.Drawing.Point(23, 137);
             this.pictureBoxBuscarRegistros.Name = "pictureBoxBuscarRegistros";
             this.pictureBoxBuscarRegistros.Size = new System.Drawing.Size(60, 50);
             this.pictureBoxBuscarRegistros.TabIndex = 2;
@@ -85,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

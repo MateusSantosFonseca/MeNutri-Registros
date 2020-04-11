@@ -376,5 +376,18 @@ namespace MeNutri_Registros.Views
             pictureBoxExportarExcel.Enabled = true;
             pictureBoxExportarPDF.Enabled = true;
         }
+
+        private void metroButtonEditarRegistro_Click(object sender, EventArgs e)
+        {
+            RegistroModel registroSelecionado = this.metroGridVisualizacaoRegistros.SelectedRows[0].DataBoundItem as RegistroModel;
+            TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(true, registroSelecionado);
+            telaEditarVisualizarRegistro.Show();
+        }
+
+        private void metroButtonVisualizarRegistro_Click(object sender, EventArgs e)
+        {
+            TelaEditarVisualizarRegistro telaEditarVisualizarRegistro = new TelaEditarVisualizarRegistro(false);
+            telaEditarVisualizarRegistro.Show();
+        }
     }
 }

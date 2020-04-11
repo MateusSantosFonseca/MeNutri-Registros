@@ -152,7 +152,7 @@
             this.metroTextBoxCargoEDiretoria.Lines = new string[0];
             this.metroTextBoxCargoEDiretoria.Location = new System.Drawing.Point(547, 150);
             this.metroTextBoxCargoEDiretoria.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBoxCargoEDiretoria.MaxLength = 32767;
+            this.metroTextBoxCargoEDiretoria.MaxLength = 70;
             this.metroTextBoxCargoEDiretoria.Name = "metroTextBoxCargoEDiretoria";
             this.metroTextBoxCargoEDiretoria.PasswordChar = '\0';
             this.metroTextBoxCargoEDiretoria.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -198,7 +198,7 @@
             this.metroTextBoxWhatsapp.Lines = new string[0];
             this.metroTextBoxWhatsapp.Location = new System.Drawing.Point(73, 328);
             this.metroTextBoxWhatsapp.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBoxWhatsapp.MaxLength = 32767;
+            this.metroTextBoxWhatsapp.MaxLength = 15;
             this.metroTextBoxWhatsapp.Name = "metroTextBoxWhatsapp";
             this.metroTextBoxWhatsapp.PasswordChar = '\0';
             this.metroTextBoxWhatsapp.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -242,7 +242,7 @@
             this.metroTextBoxInstagram.Lines = new string[0];
             this.metroTextBoxInstagram.Location = new System.Drawing.Point(283, 328);
             this.metroTextBoxInstagram.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTextBoxInstagram.MaxLength = 32767;
+            this.metroTextBoxInstagram.MaxLength = 35;
             this.metroTextBoxInstagram.Name = "metroTextBoxInstagram";
             this.metroTextBoxInstagram.PasswordChar = '\0';
             this.metroTextBoxInstagram.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -457,9 +457,10 @@
             // metroComboBoxEstados
             // 
             this.metroComboBoxEstados.DropDownHeight = 120;
+            this.metroComboBoxEstados.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.metroComboBoxEstados.FormattingEnabled = true;
             this.metroComboBoxEstados.IntegralHeight = false;
-            this.metroComboBoxEstados.ItemHeight = 23;
+            this.metroComboBoxEstados.ItemHeight = 19;
             this.metroComboBoxEstados.Items.AddRange(new object[] {
             "Acre",
             "Alagoas",
@@ -490,10 +491,11 @@
             "Tocantins"});
             this.metroComboBoxEstados.Location = new System.Drawing.Point(3, 12);
             this.metroComboBoxEstados.Name = "metroComboBoxEstados";
-            this.metroComboBoxEstados.Size = new System.Drawing.Size(140, 29);
+            this.metroComboBoxEstados.Size = new System.Drawing.Size(140, 25);
             this.metroComboBoxEstados.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroComboBoxEstados.TabIndex = 13;
             this.metroComboBoxEstados.UseSelectable = true;
+            this.metroComboBoxEstados.UseStyleColors = true;
             // 
             // metroLabelComplemento
             // 
