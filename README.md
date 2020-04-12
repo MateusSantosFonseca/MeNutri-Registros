@@ -79,4 +79,4 @@ Sistema desenvolvido em C#, utilizando Windows Forms e MetroFramework. Para pers
 
 Este software foi produzido gratuitamente para a MeNutri e sua primeira versão foi finalizada em 10/04/2020.
 
-Estando este software sobre a licença MIT, este software pode ser distribuído, desde que haja a inclusão desta licença e do copyright. Além disso não há garantias do seu funcionamento sendo que este está fornecido no modelo AS IS.
+Estando este software sobre a licença MIT, este pode ser distribuído, desde que haja a inclusão desta licença e do copyright. Além disso não há garantias do seu funcionamento sendo que este está fornecido no modelo AS IS.
