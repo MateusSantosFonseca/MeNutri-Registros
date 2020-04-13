@@ -114,6 +114,7 @@
             this.pictureBoxBuscarStringEmail.Size = new System.Drawing.Size(60, 50);
             this.pictureBoxBuscarStringEmail.TabIndex = 5;
             this.pictureBoxBuscarStringEmail.TabStop = false;
+            this.pictureBoxBuscarStringEmail.Visible = false;
             this.pictureBoxBuscarStringEmail.Click += new System.EventHandler(this.pictureBoxBuscarStringEmail_Click);
             this.pictureBoxBuscarStringEmail.MouseEnter += new System.EventHandler(this.pictureBoxBuscarStringEmail_MouseEnter);
             // 
