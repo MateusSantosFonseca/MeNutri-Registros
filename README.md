@@ -64,7 +64,7 @@ Devido a necessidade de controlar os registros da empresa, surgiu a ideia do des
 
 - **RN-05:** Deverá ser criada uma pasta Logs, onde haverão os arquivos texto contendo os erros que eventualmente acontecerem no sistema. Estes arquivos texto deverão ser nomeados com a data de exceção no formato dd-MM-yyyy_hh-mm-ss mais o nome da exceção sem espaços precedido por _ (e.g. 06-04-2020_07-51-27_Erroaoincluirregistro e 06-04-2020_07-51-27_Erroaoincluirregistro). O conteúdo deste arquivo deve conter: **nome da exceção**, **data e horário da exceção**, **mensagem da excecão** e o **StackTrace da excecão**.
 
-- **RN-06:** Todo campo **"To"** gerado através do sistema deve ser seguido dos e-mails da MeNutri: **comercial.menutri@hotmail.com** e **menutrisistemas@gmail.com**.
+- **RN-06:** Todo campo **"To"** gerado através do sistema deve ser seguido dos e-mails da MeNutri: **`comercial.menutri@hotmail.com`** e **`menutrisistemas@gmail.com`**.
 
 ### Questões técnicas:
 
