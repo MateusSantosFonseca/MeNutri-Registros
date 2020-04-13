@@ -33,10 +33,18 @@ namespace MeNutri_Registros
             }
 
             if (Globals.isAdminComum() || Globals.isAdminGeral())
+            {
                 this.pictureBoxAdicionarRegistro.Visible = true;
+                this.pictureBoxAdicionarRegistro.Enabled = true;
+                this.pictureBoxBuscarStringEmail.Visible = true;
+                this.pictureBoxBuscarStringEmail.Enabled = true;
+            }
 
             if (!Globals.isNaoAutenticado())
+            {
                 this.pictureBoxBuscarRegistros.Visible = true;
+                this.pictureBoxBuscarRegistros.Enabled = true;
+            }
         }
 
         private void pictureBoxAdicionarRegistro_Click(object sender, EventArgs e)
@@ -49,10 +57,25 @@ namespace MeNutri_Registros
         {
             RegistroController registroController = new RegistroController();
             List<RegistroModel> listaRegistros = registroController.getAllRegistros();
-            if(listaRegistros != null && listaRegistros.Count > 0)
+            if (listaRegistros != null && listaRegistros.Count > 0)
             {
                 TelaVisualizarTodosRegistros telaVisualizarTodosRegistros = new TelaVisualizarTodosRegistros(listaRegistros);
                 telaVisualizarTodosRegistros.Show();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Não existem registros cadastrados, a funcionalidade não pôde ser aberta", "Não há registros", MessageBoxButtons.OK, MessageBoxIcon.Error, 243);
+            }
+        }
+
+        private void pictureBoxBuscarStringEmail_Click(object sender, EventArgs e)
+        {
+            RegistroController registroController = new RegistroController();
+            List<RegistroModel> listaRegistros = registroController.getAllRegistros();
+            if (listaRegistros != null && listaRegistros.Count > 0)
+            {
+                TelaObterEmailsRegistros telaObterEmailsRegistros = new TelaObterEmailsRegistros(listaRegistros);
+                telaObterEmailsRegistros.Show();
             }
             else
             {
@@ -68,6 +91,11 @@ namespace MeNutri_Registros
         private void pictureBoxBuscarRegistros_MouseEnter(object sender, EventArgs e)
         {
             this.pictureBoxBuscarRegistros.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBoxBuscarStringEmail_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBoxBuscarStringEmail.Cursor = Cursors.Hand;
         }
 
         private void pictureBoxDeletarTodosRegistros_MouseEnter(object sender, EventArgs e)
@@ -100,5 +128,7 @@ namespace MeNutri_Registros
             //    MessageBox.Show("A deleção de todos registros foi cancelada, nenhum registro foi excluído.", "Exclusão de registros cancelada", MessageBoxButtons.OK);
             //}
         }
+
+        
     }
 }

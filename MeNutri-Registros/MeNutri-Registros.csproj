@@ -189,6 +189,12 @@
     <Compile Include="Views\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TelaObterEmailsRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TelaObterEmailsRegistros.Designer.cs">
+      <DependentUpon>TelaObterEmailsRegistros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaVisualizarTodosRegistros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TelaObterEmailsRegistros.resx">
+      <DependentUpon>TelaObterEmailsRegistros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TelaVisualizarTodosRegistros.resx">
       <DependentUpon>TelaVisualizarTodosRegistros.cs</DependentUpon>
@@ -248,6 +257,7 @@
     <Content Include="Menutrinho_Icon.ico" />
     <Content Include="Resources\BotaoAdicionar.png" />
     <None Include="Resources\LixeiraVerde.png" />
+    <None Include="Resources\EmailVerde.png" />
     <Content Include="Resources\LupaVerde.png" />
     <Content Include="Resources\MeNutri-Logo-SemFundo.png" />
     <Content Include="Resources\Menutrinho_Icon.ico" />

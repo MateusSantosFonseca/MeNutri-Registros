@@ -121,6 +121,9 @@
   <data name="BotaoAdicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\botaoadicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EmailVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmailVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LixeiraVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LixeiraVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

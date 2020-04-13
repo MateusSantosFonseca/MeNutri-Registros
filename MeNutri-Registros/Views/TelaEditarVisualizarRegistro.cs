@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MeNutri_Registros.Controllers;
 using MeNutri_Registros.Models;
 using MetroFramework.Forms;
+using ViaCEP;
 
 namespace MeNutri_Registros.Views
 {
@@ -211,9 +212,54 @@ namespace MeNutri_Registros.Views
             this.metroTextBoxBairro.Text = registro.Bairro;
             this.metroTextBoxOutros.Text = registro.Outros;
         }
+        private void metroTextBoxCEP_Leave(object sender, EventArgs e)
+        {
+            string cep = UtilityClass.retornaApenasNumeros(this.metroTextBoxCEP.Text);
+
+            if (cep.Length == 8)
+            {
+                try
+                {
+                    ViaCEPResult resultadoPesquisaCEP = ViaCEPClient.Search(cep);
+
+                    if (string.IsNullOrWhiteSpace(resultadoPesquisaCEP.StateInitials))
+                    {
+                        MessageBox.Show("Não foi possível validar o CEP e preencher automaticamente os campos. Você pode enviar este CEP " +
+                                                  "e preencher os campos manualmente, mas é recomendado verificar se o CEP inserido é valido.",
+                                                  "CEP não encontrado na base de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        this.metroTextBoxCEP.Text = cep;
+                        this.metroComboBoxEstados.SelectedItem = UtilityClass.getNomeUFbyIniciais(resultadoPesquisaCEP.StateInitials);
+                        this.metroTextBoxBairro.Text = resultadoPesquisaCEP.Neighborhood;
+                        this.metroTextBoxCidade.Text = resultadoPesquisaCEP.City;
+                        this.metroTextBoxRua.Text = resultadoPesquisaCEP.Street;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MensagemModel mensagem = new MensagemModel("Erro ao se conectar na API da ViaCEP", "Ocorreram erros na utilização no Excel, tente novamente.");
+                    LogModel log = new LogModel(mensagem.Titulo, ex.Message, ex.StackTrace, DateTime.Now);
+                    LogController.logarErro(log);
+                    MessageBox.Show(mensagem.Corpo, mensagem.Titulo, MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("O CEP inserido é invalido, um cep deve possuir exatamente 8 números", "CEP inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void metroButtonEditarRegistro_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(this.metroTextBoxTelefone.Text) || 
+                        (UtilityClass.RemoveDiacritics(UtilityClass.retornaApenasNumeros(this.metroTextBoxTelefone.Text), true)).Length < 8)
+            {
+                MessageBox.Show("O telefone é um campo obrigatório, por favor preencha-o corretamente.", "Alteração não realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             DialogResult resultadoPergunta = MessageBox.Show("Você confirma a alteração do registro?", "Confirmação de edição de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultadoPergunta != DialogResult.Yes)
@@ -232,9 +278,18 @@ namespace MeNutri_Registros.Views
                 this.metroTextBoxCargoDiretoria.Text = "vazio";
             }
 
+            TipoRegistro tipoRegistroSelecionado;
+            if (this.metroRadioButtonCliente.Checked)
+                tipoRegistroSelecionado = TipoRegistro.Cliente;
+            else if (this.metroRadioButtonPotencialCliente.Checked)
+                tipoRegistroSelecionado = TipoRegistro.Potencial_cliente;
+            else
+                tipoRegistroSelecionado = TipoRegistro.Funcionario;
+
             RegistroModel registroAtualizado = new RegistroModel()
             {
                 Guid = guidRegistroSendoAlterado,
+                TipoRegistro = tipoRegistroSelecionado,
                 RazaoSocial = !string.IsNullOrWhiteSpace(this.metroTextBoxRazaoSocial.Text) ? this.metroTextBoxRazaoSocial.Text : "vazio",
                 Nome = !string.IsNullOrWhiteSpace(this.metroTextBoxNome.Text) ? this.metroTextBoxNome.Text : "vazio",
                 Sobrenome = !string.IsNullOrWhiteSpace(this.metroTextBoxSobrenome.Text) ? this.metroTextBoxSobrenome.Text : "vazio",

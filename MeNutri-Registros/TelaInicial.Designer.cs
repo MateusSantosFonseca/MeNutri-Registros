@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaInicial));
             this.pictureBoxLogoMenutriPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBoxAdicionarRegistro = new System.Windows.Forms.PictureBox();
             this.pictureBoxBuscarRegistros = new System.Windows.Forms.PictureBox();
             this.metroLabelCreatedBy = new MetroFramework.Controls.MetroLabel();
             this.pictureBoxDeletarTodosRegistros = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBuscarStringEmail = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoMenutriPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeletarTodosRegistros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarStringEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxLogoMenutriPrincipal
@@ -53,6 +56,7 @@
             // 
             this.pictureBoxAdicionarRegistro.BackgroundImage = global::MeNutri_Registros.Properties.Resources.BotaoAdicionar;
             this.pictureBoxAdicionarRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAdicionarRegistro.Enabled = false;
             this.pictureBoxAdicionarRegistro.Location = new System.Drawing.Point(23, 109);
             this.pictureBoxAdicionarRegistro.Name = "pictureBoxAdicionarRegistro";
             this.pictureBoxAdicionarRegistro.Size = new System.Drawing.Size(60, 50);
@@ -66,6 +70,7 @@
             // 
             this.pictureBoxBuscarRegistros.BackgroundImage = global::MeNutri_Registros.Properties.Resources.LupaVerde;
             this.pictureBoxBuscarRegistros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBuscarRegistros.Enabled = false;
             this.pictureBoxBuscarRegistros.Location = new System.Drawing.Point(23, 29);
             this.pictureBoxBuscarRegistros.Name = "pictureBoxBuscarRegistros";
             this.pictureBoxBuscarRegistros.Size = new System.Drawing.Size(60, 50);
@@ -99,11 +104,25 @@
             this.pictureBoxDeletarTodosRegistros.Click += new System.EventHandler(this.pictureBoxDeletarTodosRegistros_Click);
             this.pictureBoxDeletarTodosRegistros.MouseEnter += new System.EventHandler(this.pictureBoxDeletarTodosRegistros_MouseEnter);
             // 
+            // pictureBoxBuscarStringEmail
+            // 
+            this.pictureBoxBuscarStringEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBuscarStringEmail.BackgroundImage")));
+            this.pictureBoxBuscarStringEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBuscarStringEmail.Enabled = false;
+            this.pictureBoxBuscarStringEmail.Location = new System.Drawing.Point(23, 192);
+            this.pictureBoxBuscarStringEmail.Name = "pictureBoxBuscarStringEmail";
+            this.pictureBoxBuscarStringEmail.Size = new System.Drawing.Size(60, 50);
+            this.pictureBoxBuscarStringEmail.TabIndex = 5;
+            this.pictureBoxBuscarStringEmail.TabStop = false;
+            this.pictureBoxBuscarStringEmail.Click += new System.EventHandler(this.pictureBoxBuscarStringEmail_Click);
+            this.pictureBoxBuscarStringEmail.MouseEnter += new System.EventHandler(this.pictureBoxBuscarStringEmail_MouseEnter);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 430);
+            this.Controls.Add(this.pictureBoxBuscarStringEmail);
             this.Controls.Add(this.pictureBoxDeletarTodosRegistros);
             this.Controls.Add(this.metroLabelCreatedBy);
             this.Controls.Add(this.pictureBoxBuscarRegistros);
@@ -115,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdicionarRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarRegistros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeletarTodosRegistros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBuscarStringEmail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +147,6 @@
         private System.Windows.Forms.PictureBox pictureBoxBuscarRegistros;
         private MetroFramework.Controls.MetroLabel metroLabelCreatedBy;
         private System.Windows.Forms.PictureBox pictureBoxDeletarTodosRegistros;
+        private System.Windows.Forms.PictureBox pictureBoxBuscarStringEmail;
     }
 }
