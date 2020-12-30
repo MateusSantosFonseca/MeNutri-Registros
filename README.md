@@ -79,6 +79,16 @@ Sistema desenvolvido em C#, utilizando Windows Forms e MetroFramework. Para pers
 
 - **[FireSharp](https://github.com/ziyasal/FireSharp)**: Para comunicação com a base de dados, bem como as funcionalidades CRUD do sistema.
 
+#### Como buildar a aplicação
+
+**1.** Primeiramente, deve-se recuperar os pacotes NuGet no Visual Studio;
+
+**2.** A respeito dos campos do app.config: 'basePath', 'authSecret', referentes às configurações do Firebase, devem ser preenchidos com chaves válidas do banco de dados;
+
+**3.** Também no app.config, devem ser inseridas senhas pros usuários (respectivamente): usuário, admin e admingeral, nas tags: senhaUserComum, senhaAdminComum, senhaAdminGeral;
+
+**4.** Finalmente, a tag emailsPadrao do app.config também deve ser alterada de acordo com a regra de negócio (podem ser mais de um e devem ser separados por ';').
+
 ### Observações finais:
 
 Este software foi produzido gratuitamente para a MeNutri e sua primeira versão foi finalizada em 10/04/2020.
