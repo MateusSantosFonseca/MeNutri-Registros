@@ -12,7 +12,7 @@ using MeNutri_Registros.Models;
 using MetroFramework.Forms;
 using MetroFramework;
 using System.Text.RegularExpressions;
-using ViaCEP;
+using ViaCep;
 
 namespace MeNutri_Registros.Views
 {
@@ -120,7 +120,8 @@ namespace MeNutri_Registros.Views
             {
                 try
                 {
-                    ViaCEPResult resultadoPesquisaCEP = ViaCEPClient.Search(cep);
+                    ViaCepClient viaCepCliente = new ViaCepClient();
+                    ViaCepResult resultadoPesquisaCEP = viaCepCliente.Search(cep);
 
                     if (string.IsNullOrWhiteSpace(resultadoPesquisaCEP.StateInitials))
                     {

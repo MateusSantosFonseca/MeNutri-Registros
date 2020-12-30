@@ -28,7 +28,7 @@ namespace MeNutri_Registros.Controllers
                         tipoUsuario = 2;
                     break;
 
-                case "bianca":
+                case "admingeral":
                     if (senha.Equals(ConfigurationManager.AppSettings["senhaAdminGeral"]))
                         tipoUsuario = 3;
                     break;

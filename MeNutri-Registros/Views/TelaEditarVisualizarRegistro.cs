@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MeNutri_Registros.Controllers;
 using MeNutri_Registros.Models;
 using MetroFramework.Forms;
-using ViaCEP;
+using ViaCep;
 
 namespace MeNutri_Registros.Views
 {
@@ -220,7 +220,8 @@ namespace MeNutri_Registros.Views
             {
                 try
                 {
-                    ViaCEPResult resultadoPesquisaCEP = ViaCEPClient.Search(cep);
+                    ViaCepClient viaCepClient = new ViaCepClient();
+                    ViaCepResult resultadoPesquisaCEP = viaCepClient.Search(cep);
 
                     if (string.IsNullOrWhiteSpace(resultadoPesquisaCEP.StateInitials))
                     {
